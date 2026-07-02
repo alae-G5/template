@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AuraDent — Clinique Internationale de Haute Haute Précision Clinique</title>
+    <title>AuraDent — Haute Précision Clinique</title>
     <style>
         :root {
             --bg-deep: #05070a;
@@ -13,7 +13,7 @@
             --brd-hover: rgba(255, 255, 255, 0.3);
             --txt-white: #ffffff;
             --txt-gray: #a1a7b8;
-            --blur-luxe: blur(25px) saturate(160%);
+            --blur-luxe: blur(30px) saturate(180%);
             --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -32,7 +32,7 @@
             line-height: 1.7;
         }
 
-        /* Fade-In Scroll Animation Utility classes */
+        /* Fade-In Scroll Animations */
         .fade-in-init {
             opacity: 0;
             transform: translateY(40px);
@@ -82,7 +82,6 @@
             letter-spacing: 4px;
             font-size: 1.1rem;
             text-transform: uppercase;
-            line-height: 1.2;
         }
 
         .nav-menu {
@@ -105,12 +104,11 @@
 
         .nav-menu a:hover { color: var(--txt-white); }
 
+        /* Hero */
         .hero-section {
-            min-height: 90vh;
-            padding: 160px 6% 100px 6%;
-            background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.02) 0%, rgba(5,7,10,1) 70%),
-                        linear-gradient(180deg, rgba(5,7,10,0.2) 0%, rgba(5,7,10,1) 100%),
-                        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2000') no-repeat center center/cover;
+            min-height: 80vh;
+            padding: 140px 6% 80px 6%;
+            background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.02) 0%, rgba(5,7,10,1) 70%);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -119,10 +117,10 @@
         }
 
         .hero-section h1 {
-            font-size: clamp(2.4rem, 7vw, 4.8rem);
+            font-size: clamp(2.4rem, 7vw, 4.5rem);
             font-weight: 200;
             letter-spacing: -1.5px;
-            line-height: 1.15;
+            line-height: 1.2;
             max-width: 1100px;
             margin-bottom: 24px;
         }
@@ -132,29 +130,28 @@
         .hero-section p {
             color: var(--txt-gray);
             max-width: 750px;
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             margin-bottom: 48px;
             font-weight: 300;
         }
 
-        /* Specialties Section Matching Image 7cacdb.png with High Blur */
+        /* Specialties Section - Tall Cards with Blurred Clinic Backgrounds behind icons */
         .specialties-section {
-            background: linear-gradient(180deg, rgba(5,7,10,0.92) 0%, rgba(5,7,10,0.85) 100%), 
-                        url('https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=2000') no-repeat center center/cover;
-            background-attachment: fixed;
-            padding: 140px 6% 120px 6%;
+            padding: 120px 6%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .section-header-block {
             text-align: left;
-            margin-bottom: 70px;
+            margin-bottom: 60px;
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
 
         .section-title {
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 400;
             letter-spacing: -0.5px;
             display: flex;
@@ -166,13 +163,13 @@
             content: '';
             display: inline-block;
             width: 4px;
-            height: 45px;
+            height: 40px;
             background-color: var(--txt-white);
         }
 
         .section-subtitle {
             color: var(--txt-gray);
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 3px;
             padding-left: 20px;
@@ -184,26 +181,47 @@
             gap: 32px;
         }
 
-        /* Tall Cards Concept based on image_7cacdb.png instructions */
+        /* Tall Glass Card with Blur over Clinic Backdrops */
         .tall-glass-card {
-            background: var(--bg-card);
+            position: relative;
             border: 1px solid var(--brd-micro);
             border-radius: 40px;
             padding: 65px 45px;
-            backdrop-filter: var(--blur-luxe);
-            -webkit-backdrop-filter: var(--blur-luxe);
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255,255,255,0.05);
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
             transition: transform 0.4s var(--ease-expo), border-color 0.4s, box-shadow 0.4s;
             display: flex;
             flex-direction: column;
             gap: 28px;
-            min-height: 620px; /* Forces cards to be beautifully tall */
+            min-height: 600px;
+            z-index: 1;
         }
+
+        /* Blurred Clinic Background Layer */
+        .tall-glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-size: cover;
+            background-position: center;
+            filter: blur(20px) brightness(0.25) saturate(120%);
+            transform: scale(1.1);
+            z-index: -1;
+            transition: transform 0.6s var(--ease-expo);
+        }
+
+        .card-1::before { background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800'); }
+        .card-2::before { background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800'); }
+        .card-3::before { background-image: url('https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=800'); }
 
         .tall-glass-card:hover {
             transform: translateY(-12px);
             border-color: var(--brd-hover);
             box-shadow: 0 50px 100px rgba(0, 0, 0, 0.7);
+        }
+
+        .tall-glass-card:hover::before {
+            transform: scale(1.15);
         }
 
         .card-icon-frame {
@@ -212,14 +230,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid var(--brd-micro);
         }
 
         .card-icon-frame svg {
-            width: 100%;
-            height: 100%;
+            width: 32px;
+            height: 32px;
             stroke: var(--txt-white);
             fill: none;
-            stroke-width: 1.2;
+            stroke-width: 1.5;
         }
 
         .tall-glass-card h3 {
@@ -235,7 +256,7 @@
             font-weight: 300;
         }
 
-        /* Clinical Stencil Layer Reveal Viewports (Lips and Teeth Only) */
+        /* Macro Clinical Before/After (JUST Lips & Teeth - No Clinics) */
         .gallery-section {
             padding: 120px 6%;
             max-width: 1400px;
@@ -245,7 +266,7 @@
         .stencil-container-canvas {
             position: relative;
             width: 100%;
-            height: 600px;
+            height: 550px;
             overflow: hidden;
             border-radius: 32px;
             margin: 30px 0 80px 0;
@@ -253,110 +274,82 @@
             user-select: none;
             -webkit-user-select: none;
             box-shadow: 0 40px 90px rgba(0,0,0,0.6);
+            background: #000;
         }
 
-        /* Base Layer: Static Image underneath (Before condition) */
-        .stencil-layer-before {
+        .stencil-layer-before, .stencil-layer-after {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             pointer-events: none;
-            z-index: 1;
         }
 
-        /* Reveal window layout: changes width only */
         .stencil-mask-slider-window {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
+            top: 0; left: 0; width: 50%; height: 100%;
             overflow: hidden;
             z-index: 2;
             pointer-events: none;
-            border-right: 3px solid rgba(255, 255, 255, 0.95);
+            border-right: 3px solid #ffffff;
         }
 
-        /* Layer 2: Inside Image (After condition) perfectly pinned to original canvas outer width bounds */
         .stencil-mask-slider-window .stencil-layer-after {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            pointer-events: none;
         }
 
-        /* HIGH RESOLUTION DENTAL MACRO IMAGES (LIPS & TEETH ONLY) */
-        /* Case 1: Separated/Non-organized Teeth -> White Grouped Clean Teeth */
-        .case-ortho .stencil-layer-before { background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1600'); filter: saturate(0.5) contrast(1.1) hue-rotate(-15deg); }
-        .case-ortho .stencil-mask-slider-window .stencil-layer-after { background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1600'); }
+        /* Case 1 Layout: Separated/Disorganized -> White Clean Grouped Teeth */
+        .case-ortho .stencil-layer-before { 
+            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200'); 
+            filter: contrast(1.1) saturate(0.8) hue-rotate(-20deg); /* Modified to look raw/unorganized */
+        }
+        .case-ortho .stencil-mask-slider-window .stencil-layer-after { 
+            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200'); 
+            filter: brightness(1.1) contrast(1.05) saturate(0.95); /* Bright white aligned look */
+        }
         
-        /* Case 2: Gross Decayed/Damaged Teeth -> Clean White Shiny Restored Teeth */
-        .case-decay .stencil-layer-before { background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1600'); filter: grayscale(0.3) brightness(0.6) sepia(0.4) contrast(1.2); }
-        .case-decay .stencil-mask-slider-window .stencil-layer-after { background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1600'); }
+        /* Case 2 Layout: Gross Decayed -> Clean White Shiny Reconstructed Teeth */
+        .case-decay .stencil-layer-before { 
+            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200'); 
+            filter: grayscale(0.2) sepia(0.6) contrast(1.3) brightness(0.7); /* Simulates decayed/damaged enamel */
+        }
+        .case-decay .stencil-mask-slider-window .stencil-layer-after { 
+            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200'); 
+            filter: brightness(1.2) contrast(1.1); /* Ultra-clean shiny white teeth look */
+        }
 
         .slider-divider-control {
             position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            cursor: ew-resize;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            top: 0; bottom: 0; left: 50%; width: 0;
+            cursor: ew-resize; z-index: 10;
+            display: flex; align-items: center; justify-content: center;
         }
 
         .slider-handle-pill {
-            width: 56px;
-            height: 56px;
-            background: var(--txt-white);
-            color: var(--bg-deep);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            box-shadow: 0 0 30px rgba(0,0,0,0.8);
-            font-size: 1.1rem;
+            width: 52px; height: 52px;
+            background: #ffffff; color: var(--bg-deep);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 800; box-shadow: 0 0 25px rgba(0,0,0,0.8);
             border: 4px solid var(--bg-deep);
         }
 
         .label-pill {
-            position: absolute;
-            bottom: 24px;
+            position: absolute; bottom: 24px;
             background: rgba(5, 7, 10, 0.85);
-            padding: 10px 20px;
-            font-size: 0.8rem;
-            border-radius: 10px;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 2px;
-            backdrop-filter: var(--blur-luxe);
-            -webkit-backdrop-filter: var(--blur-luxe);
-            border: 1px solid var(--brd-micro);
-            z-index: 5;
+            padding: 10px 20px; font-size: 0.8rem; border-radius: 10px;
+            text-transform: uppercase; font-weight: 700; letter-spacing: 2px;
+            border: 1px solid var(--brd-micro); z-index: 5;
         }
         .lbl-before { right: 24px; }
         .lbl-after { left: 24px; }
 
-        .case-title-block {
-            margin-top: 35px;
-        }
-        .case-title-block h4 { font-size: 1.4rem; font-weight: 500; margin-bottom: 4px; }
+        .case-title-block { margin-top: 25px; }
+        .case-title-block h4 { font-size: 1.3rem; font-weight: 500; margin-bottom: 6px; }
         .case-title-block p { font-size: 0.95rem; color: var(--txt-gray); font-weight: 300; }
 
-        /* Dynamic Statistics Dashboard Counter Array Area */
+        /* Statistics Dashboard Counters */
         .metrics-section {
             padding: 100px 6%;
             background: rgba(255, 255, 255, 0.01);
@@ -366,7 +359,7 @@
 
         .metrics-grid-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 40px;
             max-width: 1400px;
             margin: 0 auto;
@@ -374,22 +367,20 @@
         }
 
         .metric-item-container h5 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2.5rem, 6vw, 3.8rem);
             font-weight: 700;
-            color: var(--txt-white);
             margin-bottom: 8px;
             letter-spacing: -1px;
         }
 
         .metric-item-container p {
-            font-size: 1rem;
+            font-size: 0.85rem;
             color: var(--txt-gray);
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 500;
         }
 
-        /* Pricing Area Block */
+        /* Honoraires Pricing Block */
         .pricing-section {
             padding: 120px 6%;
             max-width: 1400px;
@@ -400,77 +391,67 @@
             background: var(--bg-card);
             border: 1px solid var(--brd-micro);
             border-radius: 40px;
-            padding: 70px 50px;
+            padding: 60px 45px;
             backdrop-filter: var(--blur-luxe);
             -webkit-backdrop-filter: var(--blur-luxe);
-            box-shadow: 0 40px 90px rgba(0,0,0,0.5);
         }
 
         .price-item-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 28px 20px;
+            padding: 24px 16px;
             border-bottom: 1px solid var(--brd-micro);
             transition: background 0.3s, transform 0.3s var(--ease-expo);
-            border-radius: 16px;
+            border-radius: 12px;
         }
 
         .price-item-row:hover {
-            background: rgba(255, 255, 255, 0.03);
-            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.02);
+            transform: translateX(6px);
         }
 
         .price-item-row:last-of-type { border-bottom: none; }
-
-        .price-info h4 { font-size: 1.3rem; font-weight: 500; margin-bottom: 4px; }
+        .price-info h4 { font-size: 1.25rem; font-weight: 500; margin-bottom: 4px; }
         .price-info p { font-size: 0.95rem; color: var(--txt-gray); font-weight: 300; }
-        .price-value { font-weight: 700; font-size: 1.3rem; color: var(--txt-white); }
+        .price-value { font-weight: 700; font-size: 1.25rem; }
 
-        /* Seamless Continuous Passing Image Ribbon at Bottom */
+        /* Bottom Infinite Moving Photo Ribbon Track */
         .passing-ribbon-wrapper {
             width: 100vw;
             position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
+            left: 50%; right: 50%;
+            margin-left: -50vw; margin-right: -50vw;
             overflow: hidden;
-            padding: 50px 0;
-            background: transparent;
+            padding: 60px 0;
             border-top: 1px solid var(--brd-micro);
         }
 
         .passing-ribbon-track {
             display: flex;
             width: calc(360px * 12);
-            transform: translate3d(0,0,0);
-            animation: continuousMarqueeLoop 30s linear infinite;
+            animation: continuousMarqueeLoop 35s linear infinite;
         }
 
         .passing-ribbon-track:hover { animation-play-state: paused; }
 
         .passing-ribbon-node {
-            width: 340px;
-            height: 240px;
+            width: 340px; height: 230px;
             margin: 0 10px;
             object-fit: cover;
             border-radius: 24px;
             border: 1px solid var(--brd-micro);
-            transition: transform 0.4s var(--ease-expo), border-color 0.4s;
+            transition: transform 0.4s var(--ease-expo);
         }
 
-        .passing-ribbon-node:hover {
-            transform: scale(1.04);
-            border-color: var(--txt-white);
-        }
+        .passing-ribbon-node:hover { transform: scale(1.03); }
 
         footer {
-            padding: 60px 6%;
+            padding: 50px 6%;
             border-top: 1px solid var(--brd-micro);
             text-align: center;
             color: var(--txt-gray);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1.5px;
         }
 
@@ -481,7 +462,7 @@
 
         @media (max-width: 768px) {
             .specialties-section, .pricing-deck-card, .tall-glass-card { padding: 40px 24px; }
-            .stencil-container-canvas { height: 380px; }
+            .stencil-container-canvas { height: 360px; }
             .tall-glass-card { min-height: auto; }
         }
     </style>
@@ -502,13 +483,12 @@
         <div style="width:20px;"></div>
     </header>
 
-    <!-- Hero Frame -->
     <section class="hero-section fade-in-init">
         <h1>Ingénierie Du Sourire & <strong>Architecture Clinique</strong></h1>
         <p>Découvrez l'alliance de la haute technologie médicale et du design esthétique biomimétique appliqué à l'art dentaire contemporain.</p>
     </section>
 
-    <!-- Tall Glass Specialties Section with blurred background from image_7cacdb.png -->
+    <!-- Tall specialties cards with clinic backgrounds behind icons -->
     <section class="specialties-section" id="specialités">
         <div class="section-header-block fade-in-init">
             <h2 class="section-title">Nos Spécialités</h2>
@@ -517,8 +497,7 @@
         
         <div class="matrix-grid">
             
-            <!-- Card 1: Implantology -->
-            <div class="tall-glass-card fade-in-init">
+            <div class="tall-glass-card card-1 fade-in-init">
                 <div class="card-icon-frame">
                     <svg viewBox="0 0 24 24">
                         <path d="M12 2C9.5 2 8 3.5 8 6c0 1.5.5 2.5 1.5 3.5L10 10.5V14h4v-3.5l.5-1C15.5 8.5 16 1.5 16 6c0-2.5-1.5-4-4-4z" />
@@ -526,11 +505,10 @@
                     </svg>
                 </div>
                 <h3>Implantologie Avancée</h3>
-                <p>Remplacement de structures manquantes par l'intégration d'ancrages stables de grade chirurgical v. Nos protocoles avancés assurent la préservation de l'architecture osseuse et une réhabilitation occlusale totale, pour un confort fonctionnel optimal et durable au quotidien.</p>
+                <p>Remplacement de structures manquantes par l'intégration d'ancrages stables de grade chirurgical V. Nos protocoles avancés assurent la préservation de l'architecture osseuse et une réhabilitation occlusale totale, pour un confort fonctionnel optimal et durable au quotidien.</p>
             </div>
 
-            <!-- Card 2: Aesthetic -->
-            <div class="tall-glass-card fade-in-init">
+            <div class="tall-glass-card card-2 fade-in-init">
                 <div class="card-icon-frame">
                     <svg viewBox="0 0 24 24">
                         <path d="M4 6l2 11h12l2-11-4 3-4-6-4 6-4-3z" stroke-linejoin="round" stroke-linecap="round"/>
@@ -541,8 +519,7 @@
                 <p>Conception sur-mesure facettes en céramique pure de dernière génération pour corriger les nuances et défauts d'émail. Grâce au Smile Design numérique, chaque facette est calibrée au micron près pour s'harmoniser parfaitement avec la dynamique naturelle des lèvres.</p>
             </div>
 
-            <!-- Card 3: Orthodontics -->
-            <div class="tall-glass-card fade-in-init">
+            <div class="tall-glass-card card-3 fade-in-init">
                 <div class="card-icon-frame">
                     <svg viewBox="0 0 24 24">
                         <path d="M3 12h18M5 9v6M9 9v6M13 9v6M17 9v6" stroke-linecap="round"/>
@@ -559,14 +536,14 @@
         </div>
     </section>
 
-    <!-- Stencil Layer Reveal Section (Lips & Teeth Only) -->
+    <!-- Corrected Macro Views Section - strictly Lips and Teeth only -->
     <section class="gallery-section" id="transformations">
         <div class="section-header-block fade-in-init">
             <h2 class="section-title">Galerie Macro</h2>
-            <div class="section-subtitle">Cas Cliniques Vérifiés (Vue Ciblée)</div>
+            <div class="section-subtitle">Cas Cliniques Spécifiques (Détails Exclusifs)</div>
         </div>
 
-        <!-- Case 1: Separated to organized clean white -->
+        <!-- Case 1: Separated/Disorganized -> White Grouped Clean Teeth -->
         <div class="fade-in-init">
             <div class="stencil-container-canvas case-ortho">
                 <div class="stencil-layer-before"></div>
@@ -574,16 +551,16 @@
                     <div class="stencil-layer-after"></div>
                 </div>
                 <div class="label-pill lbl-before">Structure non organisée</div>
-                <div class="label-pill lbl-after">Réalignement & Éclat blanc</div>
+                <div class="label-pill lbl-after">Dents blanches alignées</div>
                 <div class="slider-divider-control"><div class="slider-handle-pill">⬌</div></div>
             </div>
             <div class="case-title-block">
-                <h4>Cas I — Réhabilitation Orthodontique Multidisciplinaire</h4>
-                <p>Correction d'un espacement asymétrique complexe combiné à une optimisation globale de la teinte de l'émail.</p>
+                <h4>Cas I — Réalignement Structurel Avancé</h4>
+                <p>Correction complète des espacements irréguliers et optimisation bioclimatique tridimensionnelle de la teinte globale.</p>
             </div>
         </div>
 
-        <!-- Case 2: Decayed to perfectly shiny white reconstructed -->
+        <!-- Case 2: Gross Decayed -> Clean White Shiny Restored Teeth -->
         <div class="fade-in-init" style="margin-top: 60px;">
             <div class="stencil-container-canvas case-decay">
                 <div class="stencil-layer-before"></div>
@@ -591,21 +568,21 @@
                     <div class="stencil-layer-after"></div>
                 </div>
                 <div class="label-pill lbl-before">Éléments altérés / cariés</div>
-                <div class="label-pill lbl-after">Restauration céramique pure</div>
+                <div class="label-pill lbl-after">Surface propre et brillante</div>
                 <div class="slider-divider-control"><div class="slider-handle-pill">⬌</div></div>
             </div>
             <div class="case-title-block">
-                <h4>Cas II — Restructuration Durable & Facettes Biomimétiques</h4>
-                <p>Élimination complète des zones altérées suivie d'une reconstruction facettaire pour un résultat éclatant de santé.</p>
+                <h4>Cas II — Restauration Protectrice Intégrale</h4>
+                <p>Élimination ciblée des tissus abîmés combinée à une pose de facettes en vitrocéramique à haute brillance réfractaire.</p>
             </div>
         </div>
     </section>
 
-    <!-- Animated Statistics Area -->
+    <!-- Animated Counters Area -->
     <section class="metrics-section" id="statistiques">
         <div class="metrics-grid-layout">
             <div class="metric-item-container fade-in-init">
-                <h5 class="counter-element" data-target="1250">0</h5>
+                <h5 class="counter-element" data-target="1000">0</h5>
                 <p>Patients Traités</p>
             </div>
             <div class="metric-item-container fade-in-init">
@@ -613,28 +590,28 @@
                 <p>Avis 5 Étoiles</p>
             </div>
             <div class="metric-item-container fade-in-init">
-                <h5 class="counter-element" data-target="18">0</h5>
-                <p>Équipements Laser CNC</p>
+                <h5 class="counter-element" data-target="15">0</h5>
+                <p>Équipements Numériques CNC</p>
             </div>
             <div class="metric-item-container fade-in-init">
-                <h5 class="counter-element" data-target="99">0</h5>
-                <p>% Taux de Succès</p>
+                <h5 class="counter-element" data-target="100">0</h5>
+                <p>% Transparence</p>
             </div>
         </div>
     </section>
 
-    <!-- Translucent Matrix Prices Deck -->
+    <!-- Translucent Prices Deck -->
     <section class="pricing-section" id="tarifs">
         <div class="pricing-deck-card fade-in-init">
             <div class="section-header-block" style="margin-bottom: 50px;">
                 <h2 class="section-title">Honoraires Des Soins</h2>
-                <div class="section-subtitle">Tarification Transparente Directe</div>
+                <div class="section-subtitle">Tarification Claire & Transparente</div>
             </div>
             
             <div class="price-item-row">
                 <div class="price-info">
                     <h4>Implant Titane Premium</h4>
-                    <p>Inclus : Pivot Titane de grade chirurgical V vissé + Pilier Anatomique + Couronnes Transvissées</p>
+                    <p>Inclus : Pivot Titane chirurgical V + Pilier Anatomique + Couronnes Transvissées</p>
                 </div>
                 <div class="price-value">dès 700 €</div>
             </div>
@@ -657,7 +634,7 @@
         </div>
     </section>
 
-    <!-- Continuous Seamless Passing Dental Photos Ribbon Track at the bottom -->
+    <!-- Continuous Moving Ribbon at the Bottom -->
     <section class="passing-ribbon-wrapper fade-in-init">
         <div class="passing-ribbon-track">
             <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Cabinet Dentaire Ingénierie">
@@ -666,13 +643,13 @@
             <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Soin Microscopique">
             <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Laboratoire Usinage Numérique">
             <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Imagerie Radiographie 3D CBCT">
-            <!-- Duplicated buffer arrays for loop effect -->
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Cabinet Dentaire Ingénierie">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Consultation Clinique Pro">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=500" alt="Fauteuil Dentaire Optique">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Soin Microscopique">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Laboratoire Usinage Numérique">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Imagerie Radiographie 3D CBCT">
+            <!-- Loop Duplication -->
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Cabinet Dentaire">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Consultation">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=500" alt="Fauteuil">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Soin">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Usinage">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Imagerie">
         </div>
     </section>
 
@@ -681,10 +658,10 @@
     </footer>
 
     <script>
-        // FADE IN SCROLL ANIMATION SUB-ENGINE
+        // FADE IN SCROLL ANIMATIONS
         const initScrollFadeInAnimations = () => {
             const elementsToFade = document.querySelectorAll('.fade-in-init');
-            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -40px 0px" };
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -698,21 +675,19 @@
             elementsToFade.forEach(el => observer.observe(el));
         };
 
-        // REALTIME NUMERICAL PROGRESSIVE COUTING LOGIC
+        // PROGRESSIVE COUTING ANIMATIONS
         const initNumericalStatisticsCounters = () => {
             const counterElements = document.querySelectorAll('.counter-element');
-            const observerOptions = { threshold: 0.5 };
+            const observerOptions = { threshold: 0.3 };
 
             const animateCounterValue = (element) => {
                 const targetValue = parseInt(element.getAttribute('data-target'), 10);
-                const completeAnimationDuration = 1800; // ms
+                const completeAnimationDuration = 2000; 
                 const timestampInitialization = performance.now();
 
                 const executeFrameCalculation = (currentTimestamp) => {
                     const elapsedProgressionTime = currentTimestamp - timestampInitialization;
                     const calculatedRatio = Math.min(elapsedProgressionTime / completeAnimationDuration, 1);
-                    
-                    // Smooth easing power multiplier
                     const easedRatio = 1 - Math.pow(1 - calculatedRatio, 3);
                     const currentFrameValue = Math.floor(easedRatio * targetValue);
                     
@@ -740,7 +715,7 @@
             counterElements.forEach(counter => metricsObserver.observe(counter));
         };
 
-        // IMMUTABLE LAYER STENCIL MASK REVEAL SYSTEM
+        // STENCIL REVEAL mécanique
         const setupStencilRevealMechanics = () => {
             document.querySelectorAll('.stencil-container-canvas').forEach(viewport => {
                 const cropWindow = viewport.querySelector('.stencil-mask-slider-window');
@@ -768,17 +743,13 @@
                 window.addEventListener('resize', forceLayerProportions);
                 forceLayerProportions();
 
-                // Mouse Drag Systems
                 viewport.addEventListener('mousemove', (e) => { if(e.buttons === 1) computeRevealCoordinates(e.clientX); });
                 viewport.addEventListener('mousedown', (e) => computeRevealCoordinates(e.clientX));
-
-                // Mobile Touch Systems 
                 viewport.addEventListener('touchmove', (e) => { computeRevealCoordinates(e.touches[0].clientX); }, { passive: true });
                 viewport.addEventListener('touchstart', (e) => { computeRevealCoordinates(e.touches[0].clientX); }, { passive: true });
             });
         };
 
-        // Master Launch Stack
         window.addEventListener('DOMContentLoaded', () => {
             initScrollFadeInAnimations();
             initNumericalStatisticsCounters();
