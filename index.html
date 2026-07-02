@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Dr. Bahraoui — Cabinet Dentaire d'Excellence Tanger</title>
+    <title>AuraDent — Clinique Internationale de Haute Haute Précision Clinique</title>
     <style>
         :root {
-            --bg-pure: #030406;
-            --bg-card: rgba(17, 22, 32, 0.45);
+            --bg-deep: #05070a;
+            --bg-card: rgba(10, 15, 26, 0.45);
             --bg-glass: rgba(255, 255, 255, 0.02);
             --brd-micro: rgba(255, 255, 255, 0.08);
             --brd-hover: rgba(255, 255, 255, 0.3);
             --txt-white: #ffffff;
-            --txt-gray: #a3a8b6;
-            --accent-glow: rgba(255, 255, 255, 0.15);
-            --blur-luxe: blur(28px) saturate(170%);
+            --txt-gray: #a1a7b8;
+            --blur-luxe: blur(25px) saturate(160%);
             --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -22,15 +21,27 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
         }
 
         body {
-            background-color: var(--bg-pure);
+            background-color: var(--bg-deep);
             color: var(--txt-white);
             overflow-x: hidden;
             line-height: 1.7;
+        }
+
+        /* Fade-In Scroll Animation Utility classes */
+        .fade-in-init {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s var(--ease-expo), transform 1.2s var(--ease-expo);
+        }
+
+        .fade-in-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         header {
@@ -41,7 +52,7 @@
             border-bottom: 1px solid var(--brd-micro);
             position: sticky;
             top: 0;
-            background: rgba(3, 4, 6, 0.8);
+            background: rgba(5, 7, 10, 0.8);
             backdrop-filter: var(--blur-luxe);
             -webkit-backdrop-filter: var(--blur-luxe);
             z-index: 10000;
@@ -62,14 +73,14 @@
             align-items: center;
             justify-content: center;
             font-weight: 900;
-            color: var(--bg-pure);
+            color: var(--bg-deep);
             font-size: 1.2rem;
         }
 
         .logo-title {
             font-weight: 800;
             letter-spacing: 4px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
             line-height: 1.2;
         }
@@ -95,10 +106,10 @@
         .nav-menu a:hover { color: var(--txt-white); }
 
         .hero-section {
-            min-height: 95vh;
-            padding: 160px 4% 100px 4%;
-            background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.03) 0%, rgba(3,4,6,1) 70%),
-                        linear-gradient(180deg, rgba(3,4,6,0.2) 0%, rgba(3,4,6,1) 100%),
+            min-height: 90vh;
+            padding: 160px 6% 100px 6%;
+            background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.02) 0%, rgba(5,7,10,1) 70%),
+                        linear-gradient(180deg, rgba(5,7,10,0.2) 0%, rgba(5,7,10,1) 100%),
                         url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2000') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
@@ -113,7 +124,7 @@
             letter-spacing: -1.5px;
             line-height: 1.15;
             max-width: 1100px;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
 
         .hero-section h1 strong { font-weight: 700; }
@@ -121,64 +132,50 @@
         .hero-section p {
             color: var(--txt-gray);
             max-width: 750px;
-            font-size: clamp(1.1rem, 2.8vw, 1.35rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
             margin-bottom: 48px;
             font-weight: 300;
         }
 
-        .cta-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn-luxe-p {
-            background: var(--txt-white);
-            color: var(--bg-pure);
-            padding: 20px 44px;
-            border: none;
-            border-radius: 40px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 12px 35px rgba(255,255,255,0.12);
-            transition: transform 0.3s var(--ease-expo), background 0.3s, box-shadow 0.3s;
-        }
-
-        .btn-luxe-p:hover {
-            background: #e3e5eb;
-            transform: translateY(-3px);
-            box-shadow: 0 18px 45px rgba(255,255,255,0.22);
-        }
-
-        /* Matches styling from image_7cacdb.png */
-        .specialties-background-section {
-            background: linear-gradient(180deg, rgba(3,4,6,0.9) 0%, rgba(3,4,6,0.8) 100%), 
+        /* Specialties Section Matching Image 7cacdb.png with High Blur */
+        .specialties-section {
+            background: linear-gradient(180deg, rgba(5,7,10,0.92) 0%, rgba(5,7,10,0.85) 100%), 
                         url('https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=2000') no-repeat center center/cover;
             background-attachment: fixed;
             padding: 140px 6% 120px 6%;
         }
 
-        .img-7cacdb-title {
+        .section-header-block {
+            text-align: left;
+            margin-bottom: 70px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .section-title {
             font-size: clamp(2rem, 5vw, 3.2rem);
             font-weight: 400;
             letter-spacing: -0.5px;
-            text-align: left;
-            margin-bottom: 70px;
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
-        /* The vertical accent bar seen on image_7cacdb.png */
-        .img-7cacdb-title::before {
+        .section-title::before {
             content: '';
             display: inline-block;
             width: 4px;
             height: 45px;
             background-color: var(--txt-white);
+        }
+
+        .section-subtitle {
+            color: var(--txt-gray);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding-left: 20px;
         }
 
         .matrix-grid {
@@ -187,37 +184,37 @@
             gap: 32px;
         }
 
-        /* Glass Cards matched perfectly to image_7cacdb.png */
-        .img-7cacdb-card {
+        /* Tall Cards Concept based on image_7cacdb.png instructions */
+        .tall-glass-card {
             background: var(--bg-card);
             border: 1px solid var(--brd-micro);
             border-radius: 40px;
-            padding: 50px 40px;
+            padding: 65px 45px;
             backdrop-filter: var(--blur-luxe);
             -webkit-backdrop-filter: var(--blur-luxe);
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255,255,255,0.05);
             transition: transform 0.4s var(--ease-expo), border-color 0.4s, box-shadow 0.4s;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 28px;
+            min-height: 620px; /* Forces cards to be beautifully tall */
         }
 
-        .img-7cacdb-card:hover {
-            transform: translateY(-8px);
+        .tall-glass-card:hover {
+            transform: translateY(-12px);
             border-color: var(--brd-hover);
             box-shadow: 0 50px 100px rgba(0, 0, 0, 0.7);
         }
 
-        /* Custom Dental Outline SVG Icons matching image_7cacdb.png */
-        .img-7cacdb-icon-frame {
-            width: 80px;
-            height: 80px;
+        .card-icon-frame {
+            width: 64px;
+            height: 64px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .img-7cacdb-icon-frame svg {
+        .card-icon-frame svg {
             width: 100%;
             height: 100%;
             stroke: var(--txt-white);
@@ -225,36 +222,41 @@
             stroke-width: 1.2;
         }
 
-        .img-7cacdb-card h3 {
+        .tall-glass-card h3 {
             font-size: 1.8rem;
             font-weight: 500;
             letter-spacing: -0.5px;
-            margin-top: 10px;
         }
 
-        .img-7cacdb-card p {
+        .tall-glass-card p {
             color: var(--txt-gray);
             font-size: 1.05rem;
-            line-height: 1.75;
+            line-height: 1.8;
             font-weight: 300;
         }
 
-        /* STRICT IMMUTABLE STENCIL LAYER REVEAL SYSTEM */
-        .stencil-viewport-canvas {
+        /* Clinical Stencil Layer Reveal Viewports (Lips and Teeth Only) */
+        .gallery-section {
+            padding: 120px 6%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stencil-container-canvas {
             position: relative;
             width: 100%;
-            height: 650px;
+            height: 600px;
             overflow: hidden;
             border-radius: 32px;
-            margin: 40px 0 90px 0;
+            margin: 30px 0 80px 0;
             border: 1px solid var(--brd-micro);
             user-select: none;
             -webkit-user-select: none;
             box-shadow: 0 40px 90px rgba(0,0,0,0.6);
         }
 
-        /* Layer 1: Static Bottom Image (Before: Discolored / Misaligned Teeth) */
-        .stencil-img-before {
+        /* Base Layer: Static Image underneath (Before condition) */
+        .stencil-layer-before {
             position: absolute;
             top: 0;
             left: 0;
@@ -267,8 +269,8 @@
             z-index: 1;
         }
 
-        /* Layer 2 Stencil Crop Box Window: Width transforms ONLY */
-        .stencil-crop-window {
+        /* Reveal window layout: changes width only */
+        .stencil-mask-slider-window {
             position: absolute;
             top: 0;
             left: 0;
@@ -277,12 +279,11 @@
             overflow: hidden;
             z-index: 2;
             pointer-events: none;
-            border-right: 3px solid rgba(255, 255, 255, 0.9);
+            border-right: 3px solid rgba(255, 255, 255, 0.95);
         }
 
-        /* Layer 2 Inside Image (After: Shiny White Teeth / Perfect Orthodontics) */
-        /* Forces absolute locking to the master wrapper's frame dimensions */
-        .stencil-crop-window .stencil-img-after {
+        /* Layer 2: Inside Image (After condition) perfectly pinned to original canvas outer width bounds */
+        .stencil-mask-slider-window .stencil-layer-after {
             position: absolute;
             top: 0;
             left: 0;
@@ -294,14 +295,16 @@
             pointer-events: none;
         }
 
-        /* High-Definition Clinic and Stencil Target Links */
-        .slider-case-1 .stencil-img-before { background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1600'); filter: saturate(0.4) brightness(0.75); }
-        .slider-case-1 .stencil-crop-window .stencil-img-after { background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1600'); }
+        /* HIGH RESOLUTION DENTAL MACRO IMAGES (LIPS & TEETH ONLY) */
+        /* Case 1: Separated/Non-organized Teeth -> White Grouped Clean Teeth */
+        .case-ortho .stencil-layer-before { background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1600'); filter: saturate(0.5) contrast(1.1) hue-rotate(-15deg); }
+        .case-ortho .stencil-mask-slider-window .stencil-layer-after { background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1600'); }
         
-        .slider-case-2 .stencil-img-before { background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1600'); filter: contrast(1.1) brightness(0.7) hue-rotate(20deg); }
-        .slider-case-2 .stencil-crop-window .stencil-img-after { background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1600'); }
+        /* Case 2: Gross Decayed/Damaged Teeth -> Clean White Shiny Restored Teeth */
+        .case-decay .stencil-layer-before { background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1600'); filter: grayscale(0.3) brightness(0.6) sepia(0.4) contrast(1.2); }
+        .case-decay .stencil-mask-slider-window .stencil-layer-after { background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1600'); }
 
-        .stencil-divider-line {
+        .slider-divider-control {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -314,26 +317,26 @@
             justify-content: center;
         }
 
-        .stencil-handle-thumb {
-            width: 60px;
-            height: 60px;
+        .slider-handle-pill {
+            width: 56px;
+            height: 56px;
             background: var(--txt-white);
-            color: var(--bg-pure);
+            color: var(--bg-deep);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            box-shadow: 0 0 40px rgba(0,0,0,0.8);
-            font-size: 1.2rem;
-            border: 4px solid var(--bg-pure);
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            font-size: 1.1rem;
+            border: 4px solid var(--bg-deep);
         }
 
-        .pill-label {
+        .label-pill {
             position: absolute;
-            bottom: 28px;
-            background: rgba(3, 4, 6, 0.85);
-            padding: 10px 22px;
+            bottom: 24px;
+            background: rgba(5, 7, 10, 0.85);
+            padding: 10px 20px;
             font-size: 0.8rem;
             border-radius: 10px;
             text-transform: uppercase;
@@ -344,26 +347,56 @@
             border: 1px solid var(--brd-micro);
             z-index: 5;
         }
-        .pill-label-before { right: 28px; }
-        .pill-label-after { left: 28px; }
+        .lbl-before { right: 24px; }
+        .lbl-after { left: 24px; }
 
-        .case-caption {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--txt-gray);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-top: 44px;
+        .case-title-block {
+            margin-top: 35px;
+        }
+        .case-title-block h4 { font-size: 1.4rem; font-weight: 500; margin-bottom: 4px; }
+        .case-title-block p { font-size: 0.95rem; color: var(--txt-gray); font-weight: 300; }
+
+        /* Dynamic Statistics Dashboard Counter Array Area */
+        .metrics-section {
+            padding: 100px 6%;
+            background: rgba(255, 255, 255, 0.01);
+            border-top: 1px solid var(--brd-micro);
+            border-bottom: 1px solid var(--brd-micro);
         }
 
-        /* Pricing Table Blocks */
+        .metrics-grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .metric-item-container h5 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: var(--txt-white);
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .metric-item-container p {
+            font-size: 1rem;
+            color: var(--txt-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* Pricing Area Block */
         .pricing-section {
-            padding: 120px 6% 100px 6%;
+            padding: 120px 6%;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .pricing-glass-card {
+        .pricing-deck-card {
             background: var(--bg-card);
             border: 1px solid var(--brd-micro);
             border-radius: 40px;
@@ -373,7 +406,7 @@
             box-shadow: 0 40px 90px rgba(0,0,0,0.5);
         }
 
-        .price-row {
+        .price-item-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -383,20 +416,19 @@
             border-radius: 16px;
         }
 
-        .price-row:hover {
+        .price-item-row:hover {
             background: rgba(255, 255, 255, 0.03);
-            transform: translateX(6px);
-            cursor: pointer;
+            transform: translateX(8px);
         }
 
-        .price-row:last-of-type { border-bottom: none; }
+        .price-item-row:last-of-type { border-bottom: none; }
 
-        .price-meta h4 { font-size: 1.3rem; font-weight: 500; margin-bottom: 6px; }
-        .price-meta p { font-size: 0.95rem; color: var(--txt-gray); font-weight: 300; }
-        .price-tag { font-weight: 700; font-size: 1.3rem; color: var(--txt-white); }
+        .price-info h4 { font-size: 1.3rem; font-weight: 500; margin-bottom: 4px; }
+        .price-info p { font-size: 0.95rem; color: var(--txt-gray); font-weight: 300; }
+        .price-value { font-weight: 700; font-size: 1.3rem; color: var(--txt-white); }
 
-        /* Infinite Seamless Photo Carousel Loop */
-        .infinite-ribbon-showcase {
+        /* Seamless Continuous Passing Image Ribbon at Bottom */
+        .passing-ribbon-wrapper {
             width: 100vw;
             position: relative;
             left: 50%;
@@ -404,24 +436,23 @@
             margin-left: -50vw;
             margin-right: -50vw;
             overflow: hidden;
-            padding: 40px 0;
-            background: rgba(255, 255, 255, 0.002);
+            padding: 50px 0;
+            background: transparent;
             border-top: 1px solid var(--brd-micro);
-            border-bottom: 1px solid var(--brd-micro);
         }
 
-        .infinite-ribbon-track {
+        .passing-ribbon-track {
             display: flex;
             width: calc(360px * 12);
             transform: translate3d(0,0,0);
-            animation: continuousSlide 32s linear infinite;
+            animation: continuousMarqueeLoop 30s linear infinite;
         }
 
-        .infinite-ribbon-track:hover { animation-play-state: paused; }
+        .passing-ribbon-track:hover { animation-play-state: paused; }
 
-        .carousel-dental-img {
+        .passing-ribbon-node {
             width: 340px;
-            height: 250px;
+            height: 240px;
             margin: 0 10px;
             object-fit: cover;
             border-radius: 24px;
@@ -429,88 +460,9 @@
             transition: transform 0.4s var(--ease-expo), border-color 0.4s;
         }
 
-        .carousel-dental-img:hover {
-            transform: scale(1.03);
+        .passing-ribbon-node:hover {
+            transform: scale(1.04);
             border-color: var(--txt-white);
-        }
-
-        /* Form Engine Structuring */
-        .booking-section {
-            padding: 120px 6% 100px 6%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        form {
-            background: var(--bg-card);
-            padding: 60px;
-            border-radius: 36px;
-            border: 1px solid var(--brd-micro);
-            backdrop-filter: var(--blur-luxe);
-            -webkit-backdrop-filter: var(--blur-luxe);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.55);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 28px;
-        }
-
-        @media (max-width: 768px) { .form-row { grid-template-columns: 1fr; } }
-
-        .form-group { margin-bottom: 24px; }
-
-        label {
-            display: block;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-            color: var(--txt-gray);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        label span { color: #f43f5e; }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 18px;
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--brd-micro);
-            color: var(--txt-white);
-            border-radius: 14px;
-            font-size: 1rem;
-            transition: border-color 0.3s, background 0.3s;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: rgba(255,255,255,0.4);
-            background: rgba(0,0,0,0.6);
-        }
-
-        .submit-btn {
-            background: var(--txt-white);
-            color: var(--bg-pure);
-            width: 100%;
-            padding: 20px;
-            border: none;
-            border-radius: 14px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .submit-btn:hover {
-            background: #e3e5eb;
-            transform: translateY(-2px);
         }
 
         footer {
@@ -520,81 +472,78 @@
             color: var(--txt-gray);
             font-size: 0.9rem;
             letter-spacing: 1.5px;
-            margin-top: 120px;
         }
 
-        @keyframes continuousSlide {
+        @keyframes continuousMarqueeLoop {
             0% { transform: translate3d(0,0,0); }
             100% { transform: translate3d(calc(-360px * 6),0,0); }
         }
 
         @media (max-width: 768px) {
-            .specialties-background-section, .pricing-glass-card, form { padding: 40px 24px; }
-            .stencil-viewport-canvas { height: 400px; }
-            .img-7cacdb-card { padding: 36px 28px; }
+            .specialties-section, .pricing-deck-card, .tall-glass-card { padding: 40px 24px; }
+            .stencil-container-canvas { height: 380px; }
+            .tall-glass-card { min-height: auto; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <header class="fade-in-init">
         <div class="logo-group">
-            <div class="logo-box">B</div>
-            <div class="logo-title">Centre Dentaire<br>Bahr.</div>
+            <div class="logo-box">A</div>
+            <div class="logo-title">AuraDent</div>
         </div>
         <ul class="nav-menu">
-            <li><a href="#expertises">Spécialités</a></li>
-            <li><a href="#grille-tarifs">Tarifs</a></li>
-            <li><a href="#galerie-cas">Cas Cliniques</a></li>
-            <li><a href="#rendezvous">Rendez-vous</a></li>
+            <li><a href="#specialités">Traitements</a></li>
+            <li><a href="#transformations">Cas Cliniques</a></li>
+            <li><a href="#statistiques">Performances</a></li>
+            <li><a href="#tarifs">Honoraires</a></li>
         </ul>
-        <button style="font-size:1.8rem; background:none; border:none; color:var(--txt-white); cursor:pointer;" id="navToggle">&#9776;</button>
+        <div style="width:20px;"></div>
     </header>
 
     <!-- Hero Frame -->
-    <div class="hero-section">
-        <h1>Sourire d'Excellence & <strong>Ingénierie Dentaire</strong></h1>
-        <p>Le plus important plateau technique d'Implantologie et d'Esthétique Dentaire à Tanger. Des protocoles de soins sur-mesure d'exception orchestrés par le Dr. Bahraoui.</p>
-        <div class="cta-container">
-            <a href="#rendezvous" class="btn-luxe-p">Prendre Rendez-vous</a>
-        </div>
-    </div>
+    <section class="hero-section fade-in-init">
+        <h1>Ingénierie Du Sourire & <strong>Architecture Clinique</strong></h1>
+        <p>Découvrez l'alliance de la haute technologie médicale et du design esthétique biomimétique appliqué à l'art dentaire contemporain.</p>
+    </section>
 
-    <!-- Specialties Layout Linked to image_7cacdb.png Style Rules -->
-    <section class="specialties-background-section" id="expertises">
-        <h2 class="img-7cacdb-title">Nos Spécialités</h2>
+    <!-- Tall Glass Specialties Section with blurred background from image_7cacdb.png -->
+    <section class="specialties-section" id="specialités">
+        <div class="section-header-block fade-in-init">
+            <h2 class="section-title">Nos Spécialités</h2>
+            <div class="section-subtitle">Départements Médicaux & Esthétiques</div>
+        </div>
+        
         <div class="matrix-grid">
             
             <!-- Card 1: Implantology -->
-            <div class="img-7cacdb-card">
-                <div class="img-7cacdb-icon-frame">
-                    <!-- Custom Dental Implant Outline Vector -->
+            <div class="tall-glass-card fade-in-init">
+                <div class="card-icon-frame">
                     <svg viewBox="0 0 24 24">
                         <path d="M12 2C9.5 2 8 3.5 8 6c0 1.5.5 2.5 1.5 3.5L10 10.5V14h4v-3.5l.5-1C15.5 8.5 16 1.5 16 6c0-2.5-1.5-4-4-4z" />
                         <path d="M9 14h6M10 17h4M11 20h2M12 20v2" stroke-linecap="round"/>
                     </svg>
                 </div>
-                <h3>Implantologie</h3>
-                <p>Remplacez vos dents manquantes de manière permanente et sûre avec nos solutions d’implantologie dentaire. Découvrez comment nos implants dentaires peuvent restaurer votre sourire et votre confiance en vous. Contactez-nous dès maintenant pour une évaluation au Centre Dentaire Bahr.</p>
+                <h3>Implantologie Avancée</h3>
+                <p>Remplacement de structures manquantes par l'intégration d'ancrages stables de grade chirurgical v. Nos protocoles avancés assurent la préservation de l'architecture osseuse et une réhabilitation occlusale totale, pour un confort fonctionnel optimal et durable au quotidien.</p>
             </div>
 
             <!-- Card 2: Aesthetic -->
-            <div class="img-7cacdb-card">
-                <div class="img-7cacdb-icon-frame">
-                    <!-- Custom Cosmetic Crown Outline Vector -->
+            <div class="tall-glass-card fade-in-init">
+                <div class="card-icon-frame">
                     <svg viewBox="0 0 24 24">
                         <path d="M4 6l2 11h12l2-11-4 3-4-6-4 6-4-3z" stroke-linejoin="round" stroke-linecap="round"/>
                         <path d="M6 17s1.5 2 6 2 6-2 6-2" stroke-linecap="round"/>
                     </svg>
                 </div>
-                <h3>Dentisterie esthétique</h3>
-                <p>Révélez la beauté naturelle de votre sourire avec nos services esthétiques de pointe. De l'alignement invisible par facettes d'exception E-max au blanchiment laser photo-activé pour un éclat instantané et durable sous la direction du Dr. Bahraoui.</p>
+                <h3>Dentisterie Esthétique</h3>
+                <p>Conception sur-mesure facettes en céramique pure de dernière génération pour corriger les nuances et défauts d'émail. Grâce au Smile Design numérique, chaque facette est calibrée au micron près pour s'harmoniser parfaitement avec la dynamique naturelle des lèvres.</p>
             </div>
 
             <!-- Card 3: Orthodontics -->
-            <div class="img-7cacdb-card">
-                <div class="img-7cacdb-icon-frame">
-                    <!-- Custom Orthodontic Bracket / Aligner Wire Vector -->
+            <div class="tall-glass-card fade-in-init">
+                <div class="card-icon-frame">
                     <svg viewBox="0 0 24 24">
                         <path d="M3 12h18M5 9v6M9 9v6M13 9v6M17 9v6" stroke-linecap="round"/>
                         <rect x="4" y="10" width="2" height="4" rx="0.5"/>
@@ -604,185 +553,237 @@
                     </svg>
                 </div>
                 <h3>Orthodontie Invisible</h3>
-                <p>Redressez vos structures dentaires de manière totalement transparente. Alignement fonctionnel adulte et enfant via les dernières technologies de gouttières amovibles séquentielles Invisalign adaptées à votre morphologie.</p>
+                <p>Correction des malocclusions et réalignement structurel global à l'aide d'aligneurs transparents amovibles et discrets. Ce traitement innovant s'adapte sans effort au rythme de vie moderne tout en garantissant des mouvements dentaires d'une précision millimétrique.</p>
             </div>
 
+        </div>
+    </section>
+
+    <!-- Stencil Layer Reveal Section (Lips & Teeth Only) -->
+    <section class="gallery-section" id="transformations">
+        <div class="section-header-block fade-in-init">
+            <h2 class="section-title">Galerie Macro</h2>
+            <div class="section-subtitle">Cas Cliniques Vérifiés (Vue Ciblée)</div>
+        </div>
+
+        <!-- Case 1: Separated to organized clean white -->
+        <div class="fade-in-init">
+            <div class="stencil-container-canvas case-ortho">
+                <div class="stencil-layer-before"></div>
+                <div class="stencil-mask-slider-window">
+                    <div class="stencil-layer-after"></div>
+                </div>
+                <div class="label-pill lbl-before">Structure non organisée</div>
+                <div class="label-pill lbl-after">Réalignement & Éclat blanc</div>
+                <div class="slider-divider-control"><div class="slider-handle-pill">⬌</div></div>
+            </div>
+            <div class="case-title-block">
+                <h4>Cas I — Réhabilitation Orthodontique Multidisciplinaire</h4>
+                <p>Correction d'un espacement asymétrique complexe combiné à une optimisation globale de la teinte de l'émail.</p>
+            </div>
+        </div>
+
+        <!-- Case 2: Decayed to perfectly shiny white reconstructed -->
+        <div class="fade-in-init" style="margin-top: 60px;">
+            <div class="stencil-container-canvas case-decay">
+                <div class="stencil-layer-before"></div>
+                <div class="stencil-mask-slider-window">
+                    <div class="stencil-layer-after"></div>
+                </div>
+                <div class="label-pill lbl-before">Éléments altérés / cariés</div>
+                <div class="label-pill lbl-after">Restauration céramique pure</div>
+                <div class="slider-divider-control"><div class="slider-handle-pill">⬌</div></div>
+            </div>
+            <div class="case-title-block">
+                <h4>Cas II — Restructuration Durable & Facettes Biomimétiques</h4>
+                <p>Élimination complète des zones altérées suivie d'une reconstruction facettaire pour un résultat éclatant de santé.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Statistics Area -->
+    <section class="metrics-section" id="statistiques">
+        <div class="metrics-grid-layout">
+            <div class="metric-item-container fade-in-init">
+                <h5 class="counter-element" data-target="1250">0</h5>
+                <p>Patients Traités</p>
+            </div>
+            <div class="metric-item-container fade-in-init">
+                <h5 class="counter-element" data-target="25">0</h5>
+                <p>Avis 5 Étoiles</p>
+            </div>
+            <div class="metric-item-container fade-in-init">
+                <h5 class="counter-element" data-target="18">0</h5>
+                <p>Équipements Laser CNC</p>
+            </div>
+            <div class="metric-item-container fade-in-init">
+                <h5 class="counter-element" data-target="99">0</h5>
+                <p>% Taux de Succès</p>
+            </div>
         </div>
     </section>
 
     <!-- Translucent Matrix Prices Deck -->
-    <section class="pricing-section" id="grille-tarifs">
-        <div class="pricing-glass-card">
-            <div class="img-7cacdb-title" style="margin-bottom: 50px;">Honoraires Des Soins</div>
+    <section class="pricing-section" id="tarifs">
+        <div class="pricing-deck-card fade-in-init">
+            <div class="section-header-block" style="margin-bottom: 50px;">
+                <h2 class="section-title">Honoraires Des Soins</h2>
+                <div class="section-subtitle">Tarification Transparente Directe</div>
+            </div>
             
-            <div class="price-row" onclick="fillServiceField('Implantologie Chirurgicale')">
-                <div class="price-meta">
-                    <h4>Implant Dentaire Premium</h4>
+            <div class="price-item-row">
+                <div class="price-info">
+                    <h4>Implant Titane Premium</h4>
                     <p>Inclus : Pivot Titane de grade chirurgical V vissé + Pilier Anatomique + Couronnes Transvissées</p>
                 </div>
-                <div class="price-tag">dès 700 €</div>
+                <div class="price-value">dès 700 €</div>
             </div>
 
-            <div class="price-row" onclick="fillServiceField('Dentisterie Esthétique')">
-                <div class="price-meta">
+            <div class="price-item-row">
+                <div class="price-info">
                     <h4>Facette Céramique E-max Pure</h4>
                     <p>Par unité élémentaire - Composites et Vitrocéramiques IPS Ivoclar Vivadent</p>
                 </div>
-                <div class="price-tag">dès 300 €</div>
+                <div class="price-value">dès 300 €</div>
             </div>
 
-            <div class="price-row" onclick="fillServiceField('Orthodontie Invisible')">
-                <div class="price-meta">
+            <div class="price-item-row">
+                <div class="price-info">
                     <h4>Traitement Invisalign Complet</h4>
                     <p>Correction globale des arcades supérieure et inférieure par aligneurs invisibles</p>
                 </div>
-                <div class="price-tag">dès 2 500 €</div>
+                <div class="price-value">dès 2 500 €</div>
             </div>
         </div>
     </section>
 
-    <!-- Stencil Layer Reveal Section -->
-    <section id="galerie-cas">
-        <div class="img-7cacdb-title" style="margin-bottom: 40px;">Cas Cliniques Avant / Après</div>
-
-        <div class="case-caption">Cas Clinique I : Blanchiment & Restauration Teinte Émail</div>
-        <div class="stencil-viewport-canvas slider-case-1">
-            <!-- Static Layer 1 background -->
-            <div class="stencil-img-before"></div>
-            <!-- Dynamic cropping window wrapper -->
-            <div class="stencil-crop-window">
-                <!-- Inner asset stays locked horizontally matching outer parent viewport bounds -->
-                <div class="stencil-img-after"></div>
-            </div>
-            <div class="pill-label pill-label-before">Dents Tachées / Teinte Sombre</div>
-            <div class="pill-label pill-label-after">Éclat Blanc Brillant</div>
-            <div class="stencil-divider-line"><div class="stencil-handle-thumb">⬌</div></div>
-        </div>
-
-        <div class="case-caption">Cas Clinique II : Réalignement Orthodontique Global</div>
-        <div class="stencil-viewport-canvas slider-case-2">
-            <div class="stencil-img-before"></div>
-            <div class="stencil-crop-window">
-                <div class="stencil-img-after"></div>
-            </div>
-            <div class="pill-label pill-label-before">Chevauchement Sévère</div>
-            <div class="pill-label pill-label-after">Arcade Parfaitement Alignée</div>
-            <div class="stencil-divider-line"><div class="stencil-handle-thumb">⬌</div></div>
+    <!-- Continuous Seamless Passing Dental Photos Ribbon Track at the bottom -->
+    <section class="passing-ribbon-wrapper fade-in-init">
+        <div class="passing-ribbon-track">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Cabinet Dentaire Ingénierie">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Consultation Clinique Pro">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=500" alt="Fauteuil Dentaire Optique">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Soin Microscopique">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Laboratoire Usinage Numérique">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Imagerie Radiographie 3D CBCT">
+            <!-- Duplicated buffer arrays for loop effect -->
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Cabinet Dentaire Ingénierie">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Consultation Clinique Pro">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=500" alt="Fauteuil Dentaire Optique">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Soin Microscopique">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Laboratoire Usinage Numérique">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Imagerie Radiographie 3D CBCT">
         </div>
     </section>
 
-    <!-- Seamless Architectural Continuous Photo Ribbon Track -->
-    <section class="infinite-ribbon-showcase">
-        <div class="infinite-ribbon-track">
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Cabinet Dentaire Chirurgie">
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Dentiste Consultation">
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=500" alt="Fauteuil Dentaire Numérique">
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Soin Blanchiment Éclat">
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Équipement Prothèse">
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Imagerie Radiologie Dentaire">
-            <!-- Duplicated buffer sets to create continuous illusion track -->
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Cabinet Dentaire Chirurgie">
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Dentiste Consultation">
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=500" alt="Fauteuil Dentaire Numérique">
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Soin Blanchiment Éclat">
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Équipement Prothèse">
-            <img class="carousel-dental-img" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Imagerie Radiologie Dentaire">
-        </div>
-    </section>
-
-    <!-- Form Section -->
-    <section class="booking-section" id="rendezvous">
-        <div class="img-7cacdb-title" style="margin-bottom: 40px;">Demander un Rendez-vous</div>
-        <form id="dentalRegistrationEngine">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="p_name">Nom Complet <span>*</span></label>
-                    <input type="text" id="p_name" required placeholder="Ex: Sophia Bennani">
-                </div>
-                <div class="form-group">
-                    <label for="p_phone">Téléphone Portable <span>*</span></label>
-                    <input type="tel" id="p_phone" required placeholder="Ex: +212 661 998 877">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="p_spec">Traitement Recherché</label>
-                <select id="p_spec">
-                    <option value="Implantologie Chirurgicale">Implantologie Chirurgicale</option>
-                    <option value="Dentisterie Esthétique">Dentisterie Esthétique (Facettes E-max)</option>
-                    <option value="Orthodontie Invisible">Orthodontie Invisible (Invisalign)</option>
-                    <option value="Bilan Dentaire Préventif">Bilan Prophylactique Complet</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="p_message">Remarques ou Symptômes Présentés</label>
-                <textarea id="p_message" rows="5" placeholder="Décrivez votre besoin clinique ou vos disponibilités..."></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Soumettre au secrétariat médical</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Centre Dentaire Bahr Tanger — Cabinet d'Excellence du Dr. Bahraoui. Tous droits réservés.</p>
+    <footer class="fade-in-init">
+        <p>&copy; 2026 AuraDent International — Plateforme Clinique d'Excellence Dentaire Élite. Tous droits réservés.</p>
     </footer>
 
     <script>
-        function fillServiceField(serviceValueText) {
-            document.getElementById('p_spec').value = serviceValueText;
-            document.getElementById('rendezvous').scrollIntoView({ behavior: 'smooth' });
-        }
+        // FADE IN SCROLL ANIMATION SUB-ENGINE
+        const initScrollFadeInAnimations = () => {
+            const elementsToFade = document.querySelectorAll('.fade-in-init');
+            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-        document.getElementById('navToggle').addEventListener('click', () => {
-            alert("Interface de navigation sécurisée active.");
-        });
+            elementsToFade.forEach(el => observer.observe(el));
+        };
 
-        // ABSOLUTE TRACKING INTEGRITY STENCIL CALCULATIONS ENGINE
-        const setupStencilSliders = () => {
-            document.querySelectorAll('.stencil-viewport-canvas').forEach(viewport => {
-                const cropWindow = viewport.querySelector('.stencil-crop-window');
-                const afterImage = viewport.querySelector('.stencil-img-after');
-                const dragDivider = viewport.querySelector('.stencil-divider-line');
+        // REALTIME NUMERICAL PROGRESSIVE COUTING LOGIC
+        const initNumericalStatisticsCounters = () => {
+            const counterElements = document.querySelectorAll('.counter-element');
+            const observerOptions = { threshold: 0.5 };
 
-                // Forces afterImage dimensions to strictly replicate viewport structural width bounding box
-                const lockImageProportions = () => {
-                    const rect = viewport.getBoundingClientRect();
-                    afterImage.style.width = `${rect.width}px`;
+            const animateCounterValue = (element) => {
+                const targetValue = parseInt(element.getAttribute('data-target'), 10);
+                const completeAnimationDuration = 1800; // ms
+                const timestampInitialization = performance.now();
+
+                const executeFrameCalculation = (currentTimestamp) => {
+                    const elapsedProgressionTime = currentTimestamp - timestampInitialization;
+                    const calculatedRatio = Math.min(elapsedProgressionTime / completeAnimationDuration, 1);
+                    
+                    // Smooth easing power multiplier
+                    const easedRatio = 1 - Math.pow(1 - calculatedRatio, 3);
+                    const currentFrameValue = Math.floor(easedRatio * targetValue);
+                    
+                    element.innerText = currentFrameValue;
+
+                    if (calculatedRatio < 1) {
+                        requestAnimationFrame(executeFrameCalculation);
+                    } else {
+                        element.innerText = targetValue;
+                    }
                 };
 
-                const calculateRevealPoint = (absolutePageCursorX) => {
-                    const rect = viewport.getBoundingClientRect();
-                    let relativeHorizontalOffset = absolutePageCursorX - rect.left;
-                    
-                    if (relativeHorizontalOffset < 0) relativeHorizontalOffset = 0;
-                    if (relativeHorizontalOffset > rect.width) relativeHorizontalOffset = rect.width;
-                    
-                    const ratioPercentage = (relativeHorizontalOffset / rect.width) * 100;
-                    
-                    // Modifies crop box window bounds without causing internal asset translations
-                    cropWindow.style.width = `${ratioPercentage}%`;
-                    dragDivider.style.left = `${ratioPercentage}%`;
+                requestAnimationFrame(executeFrameCalculation);
+            };
+
+            const metricsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounterValue(entry.target);
+                        metricsObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            counterElements.forEach(counter => metricsObserver.observe(counter));
+        };
+
+        // IMMUTABLE LAYER STENCIL MASK REVEAL SYSTEM
+        const setupStencilRevealMechanics = () => {
+            document.querySelectorAll('.stencil-container-canvas').forEach(viewport => {
+                const cropWindow = viewport.querySelector('.stencil-mask-slider-window');
+                const layerAfter = viewport.querySelector('.stencil-layer-after');
+                const divider = viewport.querySelector('.slider-divider-control');
+
+                const forceLayerProportions = () => {
+                    const currentBounds = viewport.getBoundingClientRect();
+                    layerAfter.style.width = `${currentBounds.width}px`;
                 };
 
-                window.addEventListener('resize', lockImageProportions);
-                lockImageProportions();
+                const computeRevealCoordinates = (absolutePageX) => {
+                    const currentBounds = viewport.getBoundingClientRect();
+                    let computedOffset = absolutePageX - currentBounds.left;
+                    
+                    if (computedOffset < 0) computedOffset = 0;
+                    if (computedOffset > currentBounds.width) computedOffset = currentBounds.width;
+                    
+                    const absoluteRatioPercentage = (computedOffset / currentBounds.width) * 100;
+                    
+                    cropWindow.style.width = `${absoluteRatioPercentage}%`;
+                    divider.style.left = `${absoluteRatioPercentage}%`;
+                };
 
-                // Desktop Track events
-                viewport.addEventListener('mousemove', (e) => { if(e.buttons === 1) calculateRevealPoint(e.clientX); });
-                viewport.addEventListener('mousedown', (e) => calculateRevealPoint(e.clientX));
+                window.addEventListener('resize', forceLayerProportions);
+                forceLayerProportions();
 
-                // Mobile Touch event wrappers
-                viewport.addEventListener('touchmove', (e) => { calculateRevealPoint(e.touches[0].clientX); }, { passive: true });
-                viewport.addEventListener('touchstart', (e) => { calculateRevealPoint(e.touches[0].clientX); }, { passive: true });
+                // Mouse Drag Systems
+                viewport.addEventListener('mousemove', (e) => { if(e.buttons === 1) computeRevealCoordinates(e.clientX); });
+                viewport.addEventListener('mousedown', (e) => computeRevealCoordinates(e.clientX));
+
+                // Mobile Touch Systems 
+                viewport.addEventListener('touchmove', (e) => { computeRevealCoordinates(e.touches[0].clientX); }, { passive: true });
+                viewport.addEventListener('touchstart', (e) => { computeRevealCoordinates(e.touches[0].clientX); }, { passive: true });
             });
         };
 
-        document.getElementById('dentalRegistrationEngine').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('p_name').value;
-            alert(`Merci ${name}, votre demande de consultation a bien été transmise à notre secrétariat médical à Tanger.`);
-            this.reset();
+        // Master Launch Stack
+        window.addEventListener('DOMContentLoaded', () => {
+            initScrollFadeInAnimations();
+            initNumericalStatisticsCounters();
+            setupStencilRevealMechanics();
         });
-
-        window.addEventListener('DOMContentLoaded', setupStencilSliders);
     </script>
 </body>
 </html>
