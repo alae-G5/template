@@ -2,195 +2,715 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centre Dentaire Bahr</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Centre Dentaire Bahr — Excellence Dentaire Tanger</title>
     <style>
-        :root{--bg:#0b0c10;--panel:rgba(255,255,255,0.04);--blur:backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);--border:rgba(255,255,255,0.08);--accent:#ffffff;--text:#e0e0e0;--muted:#8a8a93}*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;scroll-behavior:smooth}body{background-color:var(--bg);color:var(--accent);overflow-x:hidden;line-height:1.6}header{display:flex;justify-content:space-between;align-items:center;padding:24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(11,12,16,0.8);z-index:100;var(--blur)}.logo{font-weight:700;letter-spacing:3px;font-size:1.1rem;line-height:1.3;text-transform:uppercase}.menu-icon{font-size:1.6rem;cursor:pointer;transition:transform 0.2s}.menu-icon:hover{transform:scale(1.1)}.hero{text-align:center;padding:120px 24px 80px;background:linear-gradient(rgba(11,12,16,0.85),rgba(11,12,16,0.95)),url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200') no-repeat center center/cover;min-height:75vh;display:flex;flex-direction:column;justify-content:center;align-items:center}.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:300;letter-spacing:-0.5px;line-height:1.2;max-width:800px;margin-bottom:24px;opacity:0;transform:translateY(30px);animation:fIn 0.8s cubic-bezier(0.2,0.8,0.2,1) forwards}.hero p{color:var(--muted);max-width:620px;font-size:clamp(1rem,2.5vw,1.15rem);margin-bottom:40px;opacity:0;transform:translateY(30px);animation:fIn 0.8s cubic-bezier(0.2,0.8,0.2,1) 0.2s forwards}.cta-btn{background:var(--accent);color:var(--bg);padding:16px 36px;border:none;border-radius:30px;font-weight:600;font-size:1rem;cursor:pointer;text-decoration:none;transition:transform 0.2s,background 0.2s;opacity:0;transform:translateY(30px);animation:fIn 0.8s cubic-bezier(0.2,0.8,0.2,1) 0.4s forwards}.cta-btn:hover{background:#e1e1e6;transform:scale(1.02)}section{padding:80px 24px;max-width:1000px;margin:0 auto}h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:48px;text-align:center;font-weight:400;letter-spacing:-0.5px}.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}.glass-card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:32px;var(--blur);transition:transform 0.3s,border-color 0.3s;display:flex;flex-direction:column;gap:16px}.glass-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.2)}.card-icon{width:48px;height:48px;background:rgba(255,255,255,0.06);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}.glass-card h3{font-size:1.3rem;font-weight:500;letter-spacing:-0.3px}.glass-card p{color:var(--muted);font-size:0.95rem;line-height:1.5}.pricing-box{background:var(--panel);border:1px solid var(--border);border-radius:24px;padding:40px 32px;var(--blur)}.pricing-header{text-align:center;margin-bottom:32px}.pricing-header span{text-transform:uppercase;font-size:0.8rem;letter-spacing:3px;color:var(--muted);display:block;margin-bottom:8px}.pricing-item{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--border);transition:background 0.2s;border-radius:8px;padding-left:12px;padding-right:12px}.pricing-item:hover{background:rgba(255,255,255,0.02)}.price-details h4{font-weight:500;font-size:1.1rem;margin-bottom:4px}.price-details p{font-size:0.85rem;color:var(--muted)}.price-value{font-weight:600;font-size:1.1rem;color:var(--accent)}.slider-container{position:relative;width:100%;height:450px;overflow:hidden;border-radius:20px;margin:32px 0 56px;border:1px solid var(--border)}.slider-img{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat}.img-before{background-image:url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1000')}.img-after{background-image:url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1000');width:50%}.case-2 .img-before{background-image:url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1000');filter:saturate(0.5) sepia(0.25)}.case-2 .img-after{background-image:url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1000')}.resize-bar{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--accent);cursor:ew-resize;transform:translateX(-50%);z-index:10;display:flex;align-items:center;justify-content:center}.handle{width:44px;height:44px;background:var(--accent);color:var(--bg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 0 20px rgba(0,0,0,0.4);font-size:0.9rem;letter-spacing:-1px}.tag{position:absolute;bottom:20px;background:rgba(11,12,16,0.75);padding:6px 14px;font-size:0.75rem;border-radius:6px;text-transform:uppercase;font-weight:600;letter-spacing:1px;var(--blur);border:1px solid var(--border);z-index:5}.tag-b{left:20px}.tag-a{right:20px}.slider-title{font-size:1.1rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:24px}form{background:var(--panel);padding:40px;border-radius:24px;border:1px solid var(--border);var(--blur);max-width:600px;margin:0 auto}.form-group{margin-bottom:24px}label{display:block;margin-bottom:8px;font-size:0.9rem;color:var(--muted);font-weight:500}label span{color:#ff4d4d}input,textarea{width:100%;padding:14px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:var(--accent);border-radius:10px;font-size:1rem;transition:border-color 0.2s}input:focus,textarea:focus{outline:none;border-color:var(--accent)}.submit-btn{background:var(--accent);color:var(--bg);width:100%;padding:16px;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:background 0.2s}.submit-btn:hover{background:#e1e1e6}.carousel-wrapper{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;overflow:hidden;padding:40px 0;background:rgba(255,255,255,0.01);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.carousel-track{display:flex;width:calc(300px * 10);animation:scrollTrack 25s linear infinite}.carousel-track:hover{animation-play-state:paused}.carousel-img{width:280px;height:200px;margin:0 10px;object-fit:cover;border-radius:12px;border:1px solid var(--border);filter:grayscale(20%);transition:filter 0.3s}.carousel-img:hover{filter:grayscale(0%)}@keyframes scrollTrack{0%{transform:translateX(0)}100%{transform:translateX(calc(-300px * 5))}}@keyframes fIn{to{opacity:1;transform:translateY(0)}}@media(max-width:768px){section{padding:60px 16px}.pricing-box,form{padding:24px}.slider-container{height:320px}.carousel-track{animation-duration:18s}}
+        :root {
+            --dark-pure: #08090c;
+            --dark-card: rgba(18, 20, 26, 0.55);
+            --border-light: rgba(255, 255, 255, 0.07);
+            --accent-white: #ffffff;
+            --text-main: #f0f1f5;
+            --text-darker: #8e919a;
+            --glass-blur: blur(24px);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--dark-pure);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Entry Loading Fade Animations */
+        .fade-init {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: cascadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 4%;
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            background: rgba(8, 9, 12, 0.7);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            z-index: 1000;
+            animation-delay: 0.1s;
+        }
+
+        .logo {
+            font-weight: 800;
+            letter-spacing: 4px;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .menu-trigger {
+            font-size: 1.7rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+            background: none;
+            border: none;
+            color: var(--accent-white);
+        }
+
+        .menu-trigger:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hero Landing Container */
+        .hero-banner {
+            min-height: 85vh;
+            padding: 140px 24px 80px 24px;
+            background: linear-gradient(180deg, rgba(8,9,12,0.4) 0%, rgba(8,9,12,1) 100%), 
+                        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-banner h1 {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-weight: 300;
+            letter-spacing: -1px;
+            line-height: 1.15;
+            max-width: 900px;
+            margin-bottom: 24px;
+            animation-delay: 0.2s;
+        }
+
+        .hero-banner p {
+            color: var(--text-darker);
+            max-width: 640px;
+            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+            margin-bottom: 44px;
+            font-weight: 400;
+            animation-delay: 0.3s;
+        }
+
+        .action-button {
+            background: var(--accent-white);
+            color: var(--dark-pure);
+            padding: 18px 40px;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+            transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
+            animation-delay: 0.4s;
+            scroll-behavior: smooth;
+        }
+
+        .action-button:hover {
+            background: #e6e7eb;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 35px rgba(255,255,255,0.18);
+        }
+
+        section {
+            padding: 100px 4% 60px 4%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header-wrap {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+
+        /* Glassmorphism Cards Integration */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .glassmorphic-card {
+            background: var(--dark-card);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.05);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .glassmorphic-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .card-icon-frame {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            transition: transform 0.3s;
+        }
+
+        .glassmorphic-card:hover .card-icon-frame {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        .glassmorphic-card h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: -0.2px;
+        }
+
+        .glassmorphic-card p {
+            color: var(--text-darker);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Pricing Glass Block */
+        .pricing-glass-panel {
+            background: var(--dark-card);
+            border: 1px solid var(--border-light);
+            border-radius: 28px;
+            padding: 50px 40px;
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+
+        .pricing-tagline {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            color: var(--text-darker);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 16px;
+            border-bottom: 1px solid var(--border-light);
+            transition: background 0.3s;
+            border-radius: 12px;
+        }
+
+        .pricing-row:hover {
+            background: rgba(255, 255, 255, 0.02);
+            cursor: pointer;
+        }
+
+        .pricing-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .pricing-meta h4 {
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .pricing-meta p {
+            font-size: 0.9rem;
+            color: var(--text-darker);
+        }
+
+        .pricing-cost {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--accent-white);
+            white-space: nowrap;
+        }
+
+        /* Non-stretching Image Before/After Masks Reveal Mechanism */
+        .slider-wrapper-box {
+            position: relative;
+            width: 100%;
+            height: 520px;
+            overflow: hidden;
+            border-radius: 24px;
+            margin: 24px 0 64px 0;
+            border: 1px solid var(--border-light);
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Both original images strictly match sizes and positions */
+        .image-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        .layer-before {
+            background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200');
+            z-index: 1;
+        }
+
+        /* Outer clipping panel restricts view width without distorting interior element widths */
+        .layer-after-clip-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%; /* Variable width driven via UI pointer coordinates */
+            height: 100%;
+            overflow: hidden;
+            z-index: 2;
+            transition: width 0.05s linear;
+        }
+
+        /* Interior size mirrors host bounds completely to defy scale compression distortions */
+        .layer-after-clip-container .layer-after-actual {
+            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200');
+            width: 100%;
+            height: 100%;
+        }
+
+        .case-2 .layer-before {
+            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200');
+            filter: saturate(0.4) brightness(0.9);
+        }
+        .case-2 .layer-after-clip-container .layer-after-actual {
+            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200');
+        }
+
+        .slider-bar-divider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background: var(--accent-white);
+            cursor: ew-resize;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: left 0.05s linear;
+        }
+
+        .slider-bar-divider .thumb-button {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-white);
+            color: var(--dark-pure);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            box-shadow: 0 0 30px rgba(0,0,0,0.6);
+            font-size: 1.1rem;
+        }
+
+        .badge {
+            position: absolute;
+            bottom: 24px;
+            background: rgba(8, 9, 12, 0.8);
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            border-radius: 8px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--border-light);
+            z-index: 5;
+        }
+        .badge-before { right: 24px; }
+        .badge-after { left: 24px; }
+
+        .slider-caption {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text-darker);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 36px;
+        }
+
+        /* Automated Infinite Image Carousel */
+        .infinite-carousel-container {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            overflow: hidden;
+            padding: 30px 0;
+            background: rgba(255, 255, 255, 0.01);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .carousel-infinite-track {
+            display: flex;
+            width: calc(320px * 10);
+            transform: translate3d(0, 0, 0);
+            animation: infiniteScroll 30s linear infinite;
+        }
+
+        .carousel-infinite-track:hover {
+            animation-play-state: paused;
+        }
+
+        .carousel-slide-item {
+            width: 300px;
+            height: 220px;
+            margin: 0 10px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            transition: filter 0.4s, transform 0.4s;
+        }
+
+        .carousel-slide-item:hover {
+            transform: scale(1.02);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        /* Glass Appointment Form Styling */
+        form {
+            background: var(--dark-card);
+            padding: 50px;
+            border-radius: 28px;
+            border: 1px solid var(--border-light);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .form-element {
+            margin-bottom: 28px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--text-darker);
+            font-weight: 500;
+        }
+
+        label span {
+            color: #ff4d4d;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-light);
+            color: var(--accent-white);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.25s, background 0.25s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .form-submit-action {
+            background: var(--accent-white);
+            color: var(--dark-pure);
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255,255,255,0.05);
+            transition: background 0.25s, transform 0.2s;
+        }
+
+        .form-submit-action:hover {
+            background: #e6e7eb;
+            transform: translateY(-1px);
+        }
+
+        /* Keyframe Calculations */
+        @keyframes infiniteScroll {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(calc(-320px * 5), 0, 0); }
+        }
+
+        @keyframes cascadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Layout Overrides */
+        @media (max-width: 768px) {
+            section { padding: 70px 20px 40px 20px; }
+            .pricing-glass-panel, form { padding: 32px 24px; }
+            .slider-wrapper-box { height: 360px; }
+            .carousel-infinite-track { animation-duration: 20s; }
+            .glassmorphic-card { padding: 32px; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
+    <header class="fade-init">
         <div class="logo">Centre Dentaire<br>Bahr.</div>
-        <div class="menu-icon" id="menuBtn">&#9776;</div>
+        <button class="menu-trigger" id="globalMenuBtn" aria-label="Menu">&#9776;</button>
     </header>
 
-    <div class="hero">
-        <h1>Visez la Perfection Dentaire Chez DR BAHRAOUI</h1>
-        <p>Reconnue Comme La Clinique Dentaire N°1 À Tanger. Profitez De Soins Esthétiques Et Fonctionnels De La Plus Haute Qualité Dans Un Environnement Moderne Et Sans Stress.</p>
-        <a href="#appointment" class="cta-btn">Prendre Rendez-vous</a>
+    <div class="hero-banner">
+        <h1 class="fade-init">Visez la Perfection Dentaire Chez DR BAHRAOUI</h1>
+        <p class="fade-init">Reconnue Comme La Clinique Dentaire N°1 À Tanger. Profitez De Soins Esthétiques Et Fonctionnels De La Plus Haute Qualité Dans Un Environnement Moderne Et Sans Stress.</p>
+        <a href="#appointment" class="action-button fade-init">Prendre Rendez-vous</a>
     </div>
 
     <section id="specialties">
-        <h2>Nos Spécialités</h2>
-        <div class="services-grid">
-            <div class="glass-card">
-                <div class="card-icon">🦷</div>
+        <div class="section-header-wrap">
+            <h2>Nos Spécialités</h2>
+        </div>
+        <div class="cards-grid">
+            <div class="glassmorphic-card">
+                <div class="card-icon-frame">🦷</div>
                 <h3>Implantologie</h3>
-                <p>Remplacez vos dents manquantes de manière permanente et sûre avec nos solutions d'implantologie dentaire.</p>
+                <p>Remplacez vos dents manquantes de manière permanente et sûre avec nos solutions d'implantologie dentaire de pointe.</p>
             </div>
-            <div class="glass-card">
-                <div class="card-icon">✨</div>
+            <div class="glassmorphic-card">
+                <div class="card-icon-frame">✨</div>
                 <h3>Dentisterie esthétique</h3>
-                <p>Révélez la beauté naturelle de votre sourire avec nos services de dentisterie esthétique : blanchiment, facettes, couronnes.</p>
+                <p>Révélez la beauté naturelle de votre sourire avec nos services esthétiques haut de gamme comme les facettes E-max.</p>
             </div>
-            <div class="glass-card">
-                <div class="card-icon">💎</div>
+            <div class="glassmorphic-card">
+                <div class="card-icon-frame">💎</div>
                 <h3>Prothèse fixe et mobile</h3>
-                <p>Restaurez la fonction et l'esthétique de votre sourire avec nos options de prothèses dentaires avancées.</p>
+                <p>Restaurez l'intégrité fonctionnelle et anatomique de votre dentition grâce à des prothèses durables et invisibles.</p>
             </div>
         </div>
     </section>
 
     <section id="tarifs">
-        <div class="pricing-box">
-            <div class="pricing-header">
-                <span>Traitements Populaires - 2026</span>
+        <div class="pricing-glass-panel">
+            <div class="section-header-wrap">
+                <span class="pricing-tagline">Traitements Populaires - 2026</span>
                 <h2>Devis gratuit en 24h</h2>
             </div>
 
-            <div class="pricing-item">
-                <div class="price-details">
+            <div class="pricing-row" onclick="scrollToBooking()">
+                <div class="pricing-meta">
                     <h4>Implant dentaire</h4>
                     <p>Implant + pilier + vis de cicatrisation</p>
                 </div>
-                <div class="price-value">dès 700 €</div>
+                <div class="pricing-cost">dès 700 €</div>
             </div>
 
-            <div class="pricing-item">
-                <div class="price-details">
+            <div class="pricing-row" onclick="scrollToBooking()">
+                <div class="pricing-meta">
                     <h4>Facette E-max</h4>
                     <p>Par dent - Ivoclar premium</p>
                 </div>
-                <div class="price-value">dès 300 €</div>
+                <div class="pricing-cost">dès 300 €</div>
             </div>
 
-            <div class="pricing-item">
-                <div class="price-details">
+            <div class="pricing-row" onclick="scrollToBooking()">
+                <div class="pricing-meta">
                     <h4>All-on-4 / All-on-6</h4>
                     <p>Arcade complète fixe</p>
                 </div>
-                <div class="price-value">dès 4 000 €</div>
+                <div class="pricing-cost">dès 4 000 €</div>
             </div>
 
-            <div class="pricing-item">
-                <div class="price-details">
+            <div class="pricing-row" onclick="scrollToBooking()">
+                <div class="pricing-meta">
                     <h4>Invisalign</h4>
                     <p>Aligneurs transparents</p>
                 </div>
-                <div class="price-value">dès 2 500 €</div>
+                <div class="pricing-cost">dès 2 500 €</div>
             </div>
 
-            <div class="pricing-item">
-                <div class="price-details">
+            <div class="pricing-row" onclick="scrollToBooking()">
+                <div class="pricing-meta">
                     <h4>Chirurgie esthétique</h4>
                     <p>Rhinoplastie, liposuccion...</p>
                 </div>
-                <div class="price-value">Sur devis</div>
+                <div class="pricing-cost">Sur devis</div>
             </div>
         </div>
     </section>
 
     <section id="cases">
-        <h2>Changez votre sourire, Changez votre vie</h2>
+        <div class="section-header-wrap">
+            <h2>Changez votre sourire, Changez votre vie</h2>
+        </div>
         
-        <div class="slider-title">Cas N°1 : Esthétique Globale</div>
-        <div class="slider-container">
-            <div class="slider-img img-before"></div>
-            <div class="slider-img img-after"></div>
-            <div class="tag tag-b">Avant</div>
-            <div class="tag tag-a">Après</div>
-            <div class="resize-bar"><div class="handle">⬌</div></div>
+        <div class="slider-caption">Cas N°1 : Esthétique Globale</div>
+        <div class="slider-wrapper-box">
+            <div class="image-layer layer-before"></div>
+            <div class="layer-after-clip-container">
+                <div class="image-layer layer-after-actual"></div>
+            </div>
+            <div class="badge badge-before">Avant</div>
+            <div class="badge badge-after">Après</div>
+            <div class="slider-bar-divider"><div class="thumb-button">⬌</div></div>
         </div>
 
-        <div class="slider-title">Cas N°2 : Harmonisation</div>
-        <div class="slider-container case-2">
-            <div class="slider-img img-before"></div>
-            <div class="slider-img img-after"></div>
-            <div class="tag tag-b">Avant</div>
-            <div class="tag tag-a">Après</div>
-            <div class="resize-bar"><div class="handle">⬌</div></div>
+        <div class="slider-caption">Cas N°2 : Harmonisation</div>
+        <div class="slider-wrapper-box case-2">
+            <div class="image-layer layer-before"></div>
+            <div class="layer-after-clip-container">
+                <div class="image-layer layer-after-actual"></div>
+            </div>
+            <div class="badge badge-before">Avant</div>
+            <div class="badge badge-after">Après</div>
+            <div class="slider-bar-divider"><div class="thumb-button">⬌</div></div>
         </div>
     </section>
 
-    <section id="gallery">
-        <h2>Notre Cabinet en Images</h2>
-        <div class="carousel-wrapper">
-            <div class="carousel-track">
-                <!-- Original Items -->
-                <img class="carousel-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=400" alt="Cabinet 1">
-                <img class="carousel-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400" alt="Cabinet 2">
-                <img class="carousel-img" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400" alt="Cabinet 3">
-                <img class="carousel-img" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=400" alt="Cabinet 4">
-                <img class="carousel-img" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=400" alt="Cabinet 5">
-                <!-- Infinite Loop Clones -->
-                <img class="carousel-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=400" alt="Cabinet 1">
-                <img class="carousel-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400" alt="Cabinet 2">
-                <img class="carousel-img" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400" alt="Cabinet 3">
-                <img class="carousel-img" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=400" alt="Cabinet 4">
-                <img class="carousel-img" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=400" alt="Cabinet 5">
+    <section id="gallery-carousel-view">
+        <div class="section-header-wrap">
+            <h2>Notre Cabinet en Images</h2>
+        </div>
+        <div class="infinite-carousel-container">
+            <div class="carousel-infinite-track">
+                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=400" alt="Cabinet View 1">
+                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400" alt="Cabinet View 2">
+                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400" alt="Cabinet View 3">
+                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=400" alt="Cabinet View 4">
+                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=400" alt="Cabinet View 5">
+                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=400" alt="Cabinet View 1">
+                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400" alt="Cabinet View 2">
+                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400" alt="Cabinet View 3">
+                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=400" alt="Cabinet View 4">
+                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=400" alt="Cabinet View 5">
             </div>
         </div>
     </section>
 
     <section id="appointment">
-        <h2>Réservez Votre Rendez-vous</h2>
-        <form id="appointmentForm">
-            <div class="form-group">
-                <label for="name">Nom complet <span>*</span></label>
-                <input type="text" id="name" required placeholder="Driss El Alami">
+        <div class="section-header-wrap">
+            <h2>Réservez Votre Rendez-vous</h2>
+        </div>
+        <form id="activeBookingForm">
+            <div class="form-element">
+                <label for="clientName">Nom complet <span>*</span></label>
+                <input type="text" id="clientName" required placeholder="Ex: Anis Benjelloun">
             </div>
-            <div class="form-group">
-                <label for="phone">Numéro de téléphone <span>*</span></label>
-                <input type="tel" id="phone" required placeholder="+212 600 000 000">
+            <div class="form-element">
+                <label for="clientPhone">Numéro de téléphone <span>*</span></label>
+                <input type="tel" id="clientPhone" required placeholder="Ex: +212 600 000 000">
             </div>
-            <div class="form-group">
-                <label for="message">Message ou descriptif de votre besoin</label>
-                <textarea id="message" rows="4" placeholder="Je souhaite prendre rendez-vous pour un bilan..."></textarea>
+            <div class="form-element">
+                <label for="clientMessage">Message ou descriptif de votre besoin</label>
+                <textarea id="clientMessage" rows="4" placeholder="Décrivez les soins souhaités..."></textarea>
             </div>
-            <button type="submit" class="submit-btn">Envoyer la demande</button>
+            <button type="submit" class="form-submit-action">Envoyer la demande</button>
         </form>
     </section>
 
     <script>
-        // Menu activation trigger
-        document.getElementById('menuBtn').addEventListener('click', function() {
-            alert("Menu principal accessible — Redirection vers l'accueil de la clinique.");
+        // Trigger setup for navigation row components
+        function scrollToBooking() {
+            document.getElementById('appointment').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Global menu handler
+        document.getElementById('globalMenuBtn').addEventListener('click', function() {
+            alert("Menu Principal Activé — Sélection des traitements et prise de rendez-vous en ligne.");
         });
 
-        // Precision non-stretching Image sliders
-        const initSliders = () => {
-            document.querySelectorAll('.slider-container').forEach(container => {
-                const afterImg = container.querySelector('.img-after');
-                const bar = container.querySelector('.resize-bar');
+        // Precision Mask Overlay Sliders Tracking Engine (Non-Stretching)
+        const setupMaskSliders = () => {
+            document.querySelectorAll('.slider-wrapper-box').forEach(slider => {
+                const clipContainer = slider.querySelector('.layer-after-clip-container');
+                const dividerBar = slider.querySelector('.slider-bar-divider');
 
-                const updateSlider = (clientX) => {
-                    const rect = container.getBoundingClientRect();
-                    let offset = clientX - rect.left;
-                    if (offset < 0) offset = 0;
-                    if (offset > rect.width) offset = rect.width;
+                const trackPointer = (clientX) => {
+                    const bounds = slider.getBoundingClientRect();
+                    let distance = clientX - bounds.left;
                     
-                    const percent = (offset / rect.width) * 100;
-                    afterImg.style.width = `${percent}%`;
-                    bar.style.left = `${percent}%`;
+                    if (distance < 0) distance = 0;
+                    if (distance > bounds.width) distance = bounds.width;
+                    
+                    const ratioPercentage = (distance / bounds.width) * 100;
+                    
+                    // Modifies container width bounds without altering nested image size dimensions
+                    clipContainer.style.width = `${ratioPercentage}%`;
+                    dividerBar.style.left = `${ratioPercentage}%`;
                 };
 
-                container.addEventListener('mousemove', e => { if (e.buttons === 1) updateSlider(e.clientX); });
-                container.addEventListener('mousedown', e => updateSlider(e.clientX));
-                container.addEventListener('touchmove', e => updateSlider(e.touches[0].clientX), { passive: true });
-                container.addEventListener('touchstart', e => updateSlider(e.touches[0].clientX), { passive: true });
+                // Mouse Event Handling
+                slider.addEventListener('mousemove', (e) => {
+                    if (e.buttons === 1) trackPointer(e.clientX);
+                });
+                slider.addEventListener('mousedown', (e) => trackPointer(e.clientX));
+
+                // Touch Event Handling for Mobile devices
+                slider.addEventListener('touchmove', (e) => {
+                    trackPointer(e.touches[0].clientX);
+                }, { passive: true });
+                slider.addEventListener('touchstart', (e) => {
+                    trackPointer(e.touches[0].clientX);
+                }, { passive: true });
             });
         };
 
-        // Form processing logic
-        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const n = document.getElementById('name').value;
-            alert(`Merci ${n}. Votre demande de rendez-vous a bien été enregistrée. L'équipe médicale du Centre Dentaire Bahr vous contactera prochainement.`);
+        // Form processing engine
+        document.getElementById('activeBookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const targetedUser = document.getElementById('clientName').value;
+            alert(`Merci ${targetedUser}! Votre formulaire de consultation a été traité avec succès. Notre secrétariat médical à Tanger vous contactera sous peu.`);
             this.reset();
         });
 
-        window.addEventListener('DOMContentLoaded', initSliders);
+        window.addEventListener('DOMContentLoaded', setupMaskSliders);
     </script>
 </body>
 </html>
