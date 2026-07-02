@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AuraDent — Haute Précision Esthétique</title>
+    <title>VeneerArt — Haute Précision Esthétique</title>
     <style>
         :root {
             --bg-deep: #05070a;
@@ -128,9 +128,7 @@
         }
 
         .specialties-section {
-            background: linear-gradient(180deg, rgba(5,7,10,0.95) 0%, rgba(5,7,10,0.9) 100%), 
-                        url('https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=2000') no-repeat center center/cover;
-            background-attachment: fixed;
+            background: linear-gradient(180deg, rgba(5,7,10,0.95) 0%, rgba(5,7,10,0.9) 100%);
             padding: 120px 6%;
         }
 
@@ -195,7 +193,7 @@
         .tall-glass-card h3 { font-size: 1.6rem; font-weight: 500; }
         .tall-glass-card p { color: var(--txt-gray); font-size: 1rem; line-height: 1.7; }
 
-        /* Galerie Avant/Après Réelle : Strictement et Uniquement Dents et Lèvres */
+        /* GALERIE AVANT/APRÈS : Strictement la bouche et les dents */
         .gallery-section {
             padding: 100px 6%;
             max-width: 1400px;
@@ -236,21 +234,20 @@
             border-right: 3px solid #ffffff;
         }
 
-        /* CARTE 1 : Changement réel de forme et d'alignement macro (Bouche fermée/ouverte sur dents) */
+        /* CARD 1: Uneven/crooked teeth (Before) vs Perfect straight smile (After) */
         .case-ortho .stencil-layer-before { 
-            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200'); /* Dents naturelles/espacées */
+            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200'); /* Natural uneven teeth close-up */
         }
         .case-ortho .stencil-mask-slider-window .stencil-layer-after { 
-            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200'); /* Dents organisées, alignées et blanches */
+            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200'); /* Straight organized white teeth close-up */
         }
         
-        /* CARTE 2 : Changement de texture et d'éclat sous un angle alternatif (Bouche serrée sur dents) */
+        /* CARD 2: Another fresh set of distinct before/after mouth close-ups */
         .case-decay .stencil-layer-before { 
-            background-image: url('https://images.unsplash.com/photo-1507081323647-4d250478b919?q=80&w=1200'); /* Dents à teinte modifiée */
-            filter: saturate(0.7) brightness(0.85);
+            background-image: url('https://images.unsplash.com/photo-1507081323647-4d250478b919?q=80&w=1200'); /* Darker shade natural mouth close-up */
         }
         .case-decay .stencil-mask-slider-window .stencil-layer-after { 
-            background-image: url('https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1200'); /* Sourire parfait blanc éclatant */
+            background-image: url('https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1200'); /* Brilliant white veneer smile close-up */
         }
 
         .slider-divider-control {
@@ -322,24 +319,12 @@
         .price-info p { font-size: 0.9rem; color: var(--txt-gray); }
         .price-value { font-weight: 700; font-size: 1.2rem; }
 
-        .passing-ribbon-wrapper {
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            overflow: hidden;
-            padding: 40px 0;
+        footer {
+            padding: 40px 6%;
+            text-align: center;
             border-top: 1px solid var(--brd-micro);
-        }
-
-        .passing-ribbon-track { display: flex; width: calc(320px * 10); animation: continuousMarqueeLoop 22s linear infinite; }
-        .passing-ribbon-node { width: 300px; height: 200px; margin: 0 10px; object-fit: cover; border-radius: 16px; border: 1px solid var(--brd-micro); }
-
-        @keyframes continuousMarqueeLoop {
-            0% { transform: translate3d(0,0,0); }
-            100% { transform: translate3d(calc(-320px * 5),0,0); }
+            color: var(--txt-gray);
+            font-size: 0.85rem;
         }
 
         @media (max-width: 768px) {
@@ -403,7 +388,7 @@
         </div>
     </section>
 
-    <!-- Zone de Comparaison — Exclusivement Dents & Lèvres Reconditionnées -->
+    <!-- Zone de Comparaison — Exclusivement des bouches réelles -->
     <section class="gallery-section" id="galerie">
         <div class="section-header-block fade-in-init">
             <h2 class="section-title">Analyses Macro-Visuelles</h2>
@@ -427,7 +412,7 @@
             </div>
         </div>
 
-        <!-- Cas 2 : Dents ternes/altérées -> Dents Blanches et Parfaites -->
+        <!-- Cas 2 : Teinte altérée -> Dents Blanches et Parfaites -->
         <div class="fade-in-init" style="margin-top: 50px;">
             <div class="stencil-container-canvas case-decay">
                 <div class="stencil-layer-before"></div>
@@ -484,22 +469,6 @@
                 </div>
                 <div class="price-value">Sur Devis</div>
             </div>
-        </div>
-    </section>
-
-    <section class="passing-ribbon-wrapper fade-in-init">
-        <div class="passing-ribbon-track">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Clinique Moderne">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Cabinet Dentaire">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Équipement Haute Précision">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Laboratoire Numérique">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Soin Lumineux">
-            <!-- Duplication -->
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Clinique Moderne">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Cabinet Dentaire">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Équipement Haute Précision">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Laboratoire Numérique">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Soin Lumineux">
         </div>
     </section>
 
