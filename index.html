@@ -3,714 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Centre Dentaire Bahr — Excellence Dentaire Tanger</title>
+    <title>Dr. Bahraoui — Centre Dentaire Bahr Tanger</title>
     <style>
-        :root {
-            --dark-pure: #08090c;
-            --dark-card: rgba(18, 20, 26, 0.55);
-            --border-light: rgba(255, 255, 255, 0.07);
-            --accent-white: #ffffff;
-            --text-main: #f0f1f5;
-            --text-darker: #8e919a;
-            --glass-blur: blur(24px);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            background-color: var(--dark-pure);
-            color: var(--text-main);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Entry Loading Fade Animations */
-        .fade-init {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: cascadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 4%;
-            border-bottom: 1px solid var(--border-light);
-            position: sticky;
-            top: 0;
-            background: rgba(8, 9, 12, 0.7);
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            z-index: 1000;
-            animation-delay: 0.1s;
-        }
-
-        .logo {
-            font-weight: 800;
-            letter-spacing: 4px;
-            font-size: 1.05rem;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
-
-        .menu-trigger {
-            font-size: 1.7rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-            background: none;
-            border: none;
-            color: var(--accent-white);
-        }
-
-        .menu-trigger:hover {
-            transform: scale(1.1);
-        }
-
-        /* Hero Landing Container */
-        .hero-banner {
-            min-height: 85vh;
-            padding: 140px 24px 80px 24px;
-            background: linear-gradient(180deg, rgba(8,9,12,0.4) 0%, rgba(8,9,12,1) 100%), 
-                        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero-banner h1 {
-            font-size: clamp(2.2rem, 6vw, 4rem);
-            font-weight: 300;
-            letter-spacing: -1px;
-            line-height: 1.15;
-            max-width: 900px;
-            margin-bottom: 24px;
-            animation-delay: 0.2s;
-        }
-
-        .hero-banner p {
-            color: var(--text-darker);
-            max-width: 640px;
-            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
-            margin-bottom: 44px;
-            font-weight: 400;
-            animation-delay: 0.3s;
-        }
-
-        .action-button {
-            background: var(--accent-white);
-            color: var(--dark-pure);
-            padding: 18px 40px;
-            border: none;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
-            transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
-            animation-delay: 0.4s;
-            scroll-behavior: smooth;
-        }
-
-        .action-button:hover {
-            background: #e6e7eb;
-            transform: translateY(-2px);
-            box-shadow: 0 14px 35px rgba(255,255,255,0.18);
-        }
-
-        section {
-            padding: 100px 4% 60px 4%;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-header-wrap {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        h2 {
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            font-weight: 400;
-            letter-spacing: -0.5px;
-        }
-
-        /* Glassmorphism Cards Integration */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 28px;
-        }
-
-        .glassmorphic-card {
-            background: var(--dark-card);
-            border: 1px solid var(--border-light);
-            border-radius: 20px;
-            padding: 40px;
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.05);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .glassmorphic-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .card-icon-frame {
-            width: 56px;
-            height: 56px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            transition: transform 0.3s;
-        }
-
-        .glassmorphic-card:hover .card-icon-frame {
-            transform: scale(1.05) rotate(3deg);
-        }
-
-        .glassmorphic-card h3 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            letter-spacing: -0.2px;
-        }
-
-        .glassmorphic-card p {
-            color: var(--text-darker);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Pricing Glass Block */
-        .pricing-glass-panel {
-            background: var(--dark-card);
-            border: 1px solid var(--border-light);
-            border-radius: 28px;
-            padding: 50px 40px;
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-        }
-
-        .pricing-tagline {
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 4px;
-            color: var(--text-darker);
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .pricing-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 16px;
-            border-bottom: 1px solid var(--border-light);
-            transition: background 0.3s;
-            border-radius: 12px;
-        }
-
-        .pricing-row:hover {
-            background: rgba(255, 255, 255, 0.02);
-            cursor: pointer;
-        }
-
-        .pricing-row:last-of-type {
-            border-bottom: none;
-        }
-
-        .pricing-meta h4 {
-            font-weight: 500;
-            font-size: 1.2rem;
-            margin-bottom: 4px;
-        }
-
-        .pricing-meta p {
-            font-size: 0.9rem;
-            color: var(--text-darker);
-        }
-
-        .pricing-cost {
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: var(--accent-white);
-            white-space: nowrap;
-        }
-
-        /* Non-stretching Image Before/After Masks Reveal Mechanism */
-        .slider-wrapper-box {
-            position: relative;
-            width: 100%;
-            height: 520px;
-            overflow: hidden;
-            border-radius: 24px;
-            margin: 24px 0 64px 0;
-            border: 1px solid var(--border-light);
-            user-select: none;
-            -webkit-user-select: none;
-        }
-
-        /* Both original images strictly match sizes and positions */
-        .image-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            pointer-events: none;
-        }
-
-        .layer-before {
-            background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200');
-            z-index: 1;
-        }
-
-        /* Outer clipping panel restricts view width without distorting interior element widths */
-        .layer-after-clip-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%; /* Variable width driven via UI pointer coordinates */
-            height: 100%;
-            overflow: hidden;
-            z-index: 2;
-            transition: width 0.05s linear;
-        }
-
-        /* Interior size mirrors host bounds completely to defy scale compression distortions */
-        .layer-after-clip-container .layer-after-actual {
-            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200');
-            width: 100%;
-            height: 100%;
-        }
-
-        .case-2 .layer-before {
-            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200');
-            filter: saturate(0.4) brightness(0.9);
-        }
-        .case-2 .layer-after-clip-container .layer-after-actual {
-            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200');
-        }
-
-        .slider-bar-divider {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 3px;
-            background: var(--accent-white);
-            cursor: ew-resize;
-            transform: translateX(-50%);
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: left 0.05s linear;
-        }
-
-        .slider-bar-divider .thumb-button {
-            width: 48px;
-            height: 48px;
-            background: var(--accent-white);
-            color: var(--dark-pure);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            box-shadow: 0 0 30px rgba(0,0,0,0.6);
-            font-size: 1.1rem;
-        }
-
-        .badge {
-            position: absolute;
-            bottom: 24px;
-            background: rgba(8, 9, 12, 0.8);
-            padding: 8px 16px;
-            font-size: 0.8rem;
-            border-radius: 8px;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            border: 1px solid var(--border-light);
-            z-index: 5;
-        }
-        .badge-before { right: 24px; }
-        .badge-after { left: 24px; }
-
-        .slider-caption {
-            font-size: 1.05rem;
-            font-weight: 500;
-            color: var(--text-darker);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 36px;
-        }
-
-        /* Automated Infinite Image Carousel */
-        .infinite-carousel-container {
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            overflow: hidden;
-            padding: 30px 0;
-            background: rgba(255, 255, 255, 0.01);
-            border-top: 1px solid var(--border-light);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .carousel-infinite-track {
-            display: flex;
-            width: calc(320px * 10);
-            transform: translate3d(0, 0, 0);
-            animation: infiniteScroll 30s linear infinite;
-        }
-
-        .carousel-infinite-track:hover {
-            animation-play-state: paused;
-        }
-
-        .carousel-slide-item {
-            width: 300px;
-            height: 220px;
-            margin: 0 10px;
-            object-fit: cover;
-            border-radius: 16px;
-            border: 1px solid var(--border-light);
-            transition: filter 0.4s, transform 0.4s;
-        }
-
-        .carousel-slide-item:hover {
-            transform: scale(1.02);
-            border-color: rgba(255,255,255,0.2);
-        }
-
-        /* Glass Appointment Form Styling */
-        form {
-            background: var(--dark-card);
-            padding: 50px;
-            border-radius: 28px;
-            border: 1px solid var(--border-light);
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-            max-width: 680px;
-            margin: 0 auto;
-        }
-
-        .form-element {
-            margin-bottom: 28px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            color: var(--text-darker);
-            font-weight: 500;
-        }
-
-        label span {
-            color: #ff4d4d;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 16px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border-light);
-            color: var(--accent-white);
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: border-color 0.25s, background 0.25s;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.4);
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .form-submit-action {
-            background: var(--accent-white);
-            color: var(--dark-pure);
-            width: 100%;
-            padding: 18px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(255,255,255,0.05);
-            transition: background 0.25s, transform 0.2s;
-        }
-
-        .form-submit-action:hover {
-            background: #e6e7eb;
-            transform: translateY(-1px);
-        }
-
-        /* Keyframe Calculations */
-        @keyframes infiniteScroll {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(calc(-320px * 5), 0, 0); }
-        }
-
-        @keyframes cascadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Layout Overrides */
-        @media (max-width: 768px) {
-            section { padding: 70px 20px 40px 20px; }
-            .pricing-glass-panel, form { padding: 32px 24px; }
-            .slider-wrapper-box { height: 360px; }
-            .carousel-infinite-track { animation-duration: 20s; }
-            .glassmorphic-card { padding: 32px; }
-        }
+        :root{--b-pure:#050608;--b-card:rgba(15,18,24,0.45);--b-glass:rgba(255,255,255,0.03);--brd-lgt:rgba(255,255,255,0.06);--brd-hvy:rgba(255,255,255,0.18);--act:#ffffff;--txt-m:#f3f4f6;--txt-d:#9ca3af;--accent-gold:#d4af37;--blur-p:blur(32px);--ani-c:cubic-bezier(0.16,1,0.3,1)}*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}body{background-color:var(--b-pure);color:var(--txt-m);overflow-x:hidden;line-height:1.65}.fade-in-load{opacity:0;transform:translate3d(0,35px,0);animation:fUp 1.2s var(--ani-c) forwards;animation-delay:calc(var(--d)*100ms)}header{display:flex;justify-content:space-between;align-items:center;padding:26px 5%;border-bottom:1px solid var(--brd-lgt);position:sticky;top:0;background:rgba(5,6,8,0.75);backdrop-filter:var(--blur-p);-webkit-backdrop-filter:var(--blur-p);z-index:1000}.logo-container{display:flex;align-items:center;gap:12px}.logo-mark{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--act),rgba(255,255,255,0.2));display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--b-pure);font-size:1.1rem}.logo-txt{font-weight:800;letter-spacing:4px;font-size:1.05rem;text-transform:uppercase;line-height:1.2}.nav-links{display:flex;gap:32px;list-style:none}@media(max-width:968px){.nav-links{display:none}}.nav-links a{color:var(--txt-d);text-decoration:none;font-size:0.9rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;transition:color 0.3s}.nav-links a:hover{color:var(--act)}.menu-trig{font-size:1.8rem;cursor:pointer;background:none;border:none;color:var(--act);display:none}@media(max-width:968px){.menu-trig{display:block}}.hero-v2{min-height:92vh;padding:160px 24px 100px 24px;background:radial-gradient(circle at top right,rgba(255,255,255,0.04) 0%,rgba(5,6,8,1) 70%),linear-gradient(180deg,rgba(5,6,8,0.2) 0%,rgba(5,6,8,1) 100%),url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600') no-repeat center center/cover;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}.hero-v2 h1{font-size:clamp(2.4rem,7vw,4.5rem);font-weight:300;letter-spacing:-1.5px;line-height:1.1;max-width:1050px;margin-bottom:28px}.hero-v2 p{color:var(--txt-d);max-width:700px;font-size:clamp(1.1rem,2.8vw,1.35rem);margin-bottom:48px;font-weight:300}.cta-wrap{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}.btn-p{background:var(--act);color:var(--b-pure);padding:18px 42px;border:none;border-radius:40px;font-weight:600;font-size:1.05rem;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 12px 35px rgba(255,255,255,0.12);transition:transform 0.3s var(--ani-c),background 0.3s,box-shadow 0.3s}.btn-p:hover{background:#e2e4e9;transform:translate3d(0,-3px,0);box-shadow:0 18px 40px rgba(255,255,255,0.2)}.btn-s{background:var(--b-glass);color:var(--act);padding:18px 42px;border:1px solid var(--brd-lgt);border-radius:40px;font-weight:600;font-size:1.05rem;cursor:pointer;text-decoration:none;display:inline-block;backdrop-filter:var(--blur-p);-webkit-backdrop-filter:var(--blur-p);transition:background 0.3s,border-color 0.3s,transform 0.3s var(--ani-c)}.btn-s:hover{background:rgba(255,255,255,0.08);border-color:var(--brd-hvy);transform:translate3d(0,-2px,0)}section{padding:120px 5% 80px 5%;max-width:1250px;margin:0 auto}.sec-title-area{text-align:center;margin-bottom:70px}.sec-title-area span{text-transform:uppercase;font-size:0.85rem;letter-spacing:5px;color:var(--txt-d);display:block;margin-bottom:12px;font-weight:600}.sec-title-area h2{font-size:clamp(2rem,5vw,3rem);font-weight:400;letter-spacing:-1px}.grid-matrix{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px}.glass-v2-card{background:var(--b-card);border:1px solid var(--brd-lgt);border-radius:24px;padding:44px;backdrop-filter:var(--blur-p);-webkit-backdrop-filter:var(--blur-p);box-shadow:0 30px 60px rgba(0,0,0,0.4),inset 0 1px 1px rgba(255,255,255,0.05);transition:transform 0.4s var(--ani-c),border-color 0.4s,box-shadow 0.4s;display:flex;flex-direction:column;gap:24px}.glass-v2-card:hover{transform:translate3d(0,-8px,0);border-color:rgba(255,255,255,0.25);box-shadow:0 40px 80px rgba(0,0,0,0.6),inset 0 1px 2px rgba(255,255,255,0.1)}.card-ico-box{width:64px;height:64px;background:rgba(255,255,255,0.04);border:1px solid var(--brd-lgt);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;transition:transform 0.4s var(--ani-c)}.glass-v2-card:hover {border-color:var(--brd-hvy)}.glass-v2-card:hover .card-ico-box{transform:scale(1.08) rotate(2deg);background:rgba(255,255,255,0.08);border-color:var(--brd-hvy)}.glass-v2-card h3{font-size:1.5rem;font-weight:500;letter-spacing:-0.3px}.glass-v2-card p{color:var(--txt-d);font-size:1.02rem;line-height:1.65}.card-link{color:var(--act);text-decoration:none;font-weight:600;font-size:0.95rem;display:flex;align-items:center;gap:8px;margin-top:auto;transition:gap 0.2s}.card-link:hover{gap:14px}.pricing-super-panel{background:var(--b-card);border:1px solid var(--brd-lgt);border-radius:32px;padding:60px 50px;backdrop-filter:var(--blur-p);-webkit-backdrop-filter:var(--blur-p);box-shadow:0 40px 90px rgba(0,0,0,0.5)}.table-row-item{display:flex;justify-content:space-between;align-items:center;padding:26px 20px;border-bottom:1px solid var(--brd-lgt);transition:background 0.3s,transform 0.3s var(--ani-c);border-radius:14px;margin-bottom:4px}.table-row-item:hover{background:rgba(255,255,255,0.03);transform:translate3d(4px,0,0);cursor:pointer}.table-row-item:last-of-type{border-bottom:none;margin-bottom:0}.t-meta h4{font-weight:500;font-size:1.25rem;margin-bottom:6px}.t-meta p{font-size:0.92rem;color:var(--txt-d)}.t-cost{font-weight:600;font-size:1.25rem;color:var(--act);display:flex;align-items:center;gap:12px}.t-cost::after{content:'➔';font-size:0.9rem;opacity:0;transform:translate3d(-10px,0,0);transition:all 0.3s var(--ani-c)}.table-row-item:hover .t-cost::after{opacity:1;transform:translate3d(0,0,0)}.slider-viewport-box{position:relative;width:100%;height:560px;overflow:hidden;border-radius:28px;margin:32px 0 72px 0;border:1px solid var(--brd-lgt);user-select:none;-webkit-user-select:none}.canvas-layer{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;pointer-events:none}.layer-b{background-image:url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200');z-index:1}.clip-mask-host{position:absolute;top:0;left:0;width:50%;height:100%;overflow:hidden;z-index:2;border-right:1px solid rgba(255,255,255,0.3)}.clip-mask-host .layer-a-fixed{background-image:url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200');width:100vw;height:100%;max-width:none}.case-2-scope .layer-b{background-image:url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200');filter:saturate(0.35) brightness(0.85)}.case-2-scope .clip-mask-host .layer-a-fixed{background-image:url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200');filter:none}.slider-ctrl-bar{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--act);cursor:ew-resize;transform:translateX(-50%);z-index:10;display:flex;align-items:center;justify-content:center}.ctrl-thumb{width:54px;height:54px;background:var(--act);color:var(--b-pure);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 0 40px rgba(0,0,0,0.7);font-size:1.2rem;border:3px solid var(--b-pure)}.tag-pill{position:absolute;bottom:28px;background:rgba(5,6,8,0.85);padding:10px 20px;font-size:0.8rem;border-radius:10px;text-transform:uppercase;font-weight:600;letter-spacing:2px;backdrop-filter:var(--blur-p);-webkit-backdrop-filter:var(--blur-p);border:1px solid var(--brd-lgt);z-index:5}.pill-b{right:28px}.pill-a{left:28px}.lbl-caption{font-size:1.1rem;font-weight:500;color:var(--txt-d);text-transform:uppercase;letter-spacing:3px;margin-top:44px}.infinite-carousel-shell{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;overflow:hidden;padding:40px 0;background:rgba(255,255,255,0.005);border-top:1px solid var(--brd-lgt);border-bottom:1px solid var(--brd-lgt)}.carousel-h-track{display:flex;width:calc(340px * 12);transform:translate3d(0,0,0);animation:cScroll 32s linear infinite}.carousel-h-track:hover{animation-play-state:paused}.carousel-photo{width:320px;height:240px;margin:0 10px;object-fit:cover;border-radius:20px;border:1px solid var(--brd-lgt);transition:filter 0.4s,transform 0.4s var(--ani-c),border-color 0.4s}.carousel-photo:hover{transform:scale(1.03);border-color:rgba(255,255,255,0.25);filter:brightness(1.1)}form{background:var(--b-card);padding:60px;border-radius:32px;border:1px solid var(--brd-lgt);backdrop-filter:var(--blur-p);-webkit-backdrop-filter:var(--blur-p);box-shadow:0 40px 90px rgba(0,0,0,0.5);max-width:750px;margin:0 auto}.f-group{margin-bottom:32px}.f-group-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}@media(max-width:680px){.f-group-row{grid-template-columns:1fr}.f-group-row .f-group{margin-bottom:0}}label{display:block;margin-bottom:12px;font-size:0.95rem;color:var(--txt-d);font-weight:500;letter-spacing:0.5px}label span{color:#ef4444}input,select,textarea{width:100%;padding:18px;background:rgba(0,0,0,0.35);border:1px solid var(--brd-lgt);color:var(--act);border-radius:14px;font-size:1rem;transition:border-color 0.3s var(--ani-c),background 0.3s}input:focus,select:focus,textarea:focus{outline:none;border-color:rgba(255,255,255,0.35);background:rgba(0,0,0,0.55)}.btn-submit{background:var(--act);color:var(--b-pure);width:100%;padding:20px;border:none;border-radius:14px;font-size:1.1rem;font-weight:600;cursor:pointer;box-shadow:0 15px 30px rgba(255,255,255,0.06);transition:background 0.3s,transform 0.2s}.btn-submit:hover{background:#e2e4e9;transform:translate3d(0,-1px,0)}footer{padding:60px 5%;border-top:1px solid var(--brd-lgt);text-align:center;color:var(--txt-d);font-size:0.9rem;letter-spacing:1px;margin-top:100px}@keyframes cScroll{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(calc(-340px * 6),0,0)}}@keyframes fUp{to{opacity:1;transform:translate3d(0,0,0)}}@media(max-width:768px){section{padding:80px 20px 40px 20px}.pricing-super-panel,form{padding:36px 20px}.slider-viewport-box{height:380px}.carousel-h-track{animation-duration:22s}.glass-v2-card{padding:32px}}
     </style>
 </head>
 <body>
 
-    <header class="fade-init">
-        <div class="logo">Centre Dentaire<br>Bahr.</div>
-        <button class="menu-trigger" id="globalMenuBtn" aria-label="Menu">&#9776;</button>
+    <header class="fade-init" style="--d:1">
+        <div class="logo-container">
+            <div class="logo-mark">B</div>
+            <div class="logo-txt">Centre Dentaire<br>Bahr.</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#specialties">Spécialités</a></li>
+            <li><a href="#tarifs">Tarifs</a></li>
+            <li><a href="#cases">Cas Cliniques</a></li>
+            <li><a href="#gallery">Cabinet</a></li>
+            <li><a href="#appointment">Rendez-vous</a></li>
+        </ul>
+        <button class="menu-trig" id="navActionMenu" aria-label="Menu">&#9776;</button>
     </header>
 
-    <div class="hero-banner">
-        <h1 class="fade-init">Visez la Perfection Dentaire Chez DR BAHRAOUI</h1>
-        <p class="fade-init">Reconnue Comme La Clinique Dentaire N°1 À Tanger. Profitez De Soins Esthétiques Et Fonctionnels De La Plus Haute Qualité Dans Un Environnement Moderne Et Sans Stress.</p>
-        <a href="#appointment" class="action-button fade-init">Prendre Rendez-vous</a>
+    <div class="hero-v2">
+        <h1 class="fade-init" style="--d:3">Visez la Perfection Dentaire Chez DR BAHRAOUI</h1>
+        <p class="fade-init" style="--d:5">Reconnue Comme La Clinique Dentaire N°1 À Tanger. Profitez De Soins Esthétiques Et Fonctionnels De La Plus Haute Qualité Dans Un Environnement Moderne Et Sans Stress.</p>
+        <div class="cta-wrap fade-init" style="--d:7">
+            <a href="#appointment" class="btn-p">Prendre Rendez-vous</a>
+            <a href="#tarifs" class="btn-s">Consulter les Tarifs</a>
+        </div>
     </div>
 
     <section id="specialties">
-        <div class="section-header-wrap">
-            <h2>Nos Spécialités</h2>
+        <div class="sec-title-area fade-init" style="--d:2">
+            <span>Découvrez Notre Expertise</span>
+            <h2>Nos Spécialités Médicales</h2>
         </div>
-        <div class="cards-grid">
-            <div class="glassmorphic-card">
-                <div class="card-icon-frame">🦷</div>
-                <h3>Implantologie</h3>
-                <p>Remplacez vos dents manquantes de manière permanente et sûre avec nos solutions d'implantologie dentaire de pointe.</p>
+        <div class="grid-matrix">
+            <div class="glass-v2-card fade-init" style="--d:3">
+                <div class="card-ico-box">🦷</div>
+                <h3>Implantologie Avancée</h3>
+                <p>Remplacement permanent de structures dentaires manquantes via implants ostéointégrés haut de gamme avec piliers personnalisés de haute précision anatomique.</p>
+                <a href="#appointment" class="card-link">En savoir plus</a>
             </div>
-            <div class="glassmorphic-card">
-                <div class="card-icon-frame">✨</div>
-                <h3>Dentisterie esthétique</h3>
-                <p>Révélez la beauté naturelle de votre sourire avec nos services esthétiques haut de gamme comme les facettes E-max.</p>
+            <div class="glass-v2-card fade-init" style="--d:4">
+                <div class="card-ico-box">✨</div>
+                <h3>Dentisterie Esthétique</h3>
+                <p>Conception sur mesure du sourire idéal. Restaurations céramiques complexes, facettes E-max pures d'Ivoclar, et techniques avancées de blanchiment photo-activé.</p>
+                <a href="#appointment" class="card-link">En savoir plus</a>
             </div>
-            <div class="glassmorphic-card">
-                <div class="card-icon-frame">💎</div>
-                <h3>Prothèse fixe et mobile</h3>
-                <p>Restaurez l'intégrité fonctionnelle et anatomique de votre dentition grâce à des prothèses durables et invisibles.</p>
+            <div class="glass-v2-card fade-init" style="--d:5">
+                <div class="card-ico-box">💎</div>
+                <h3>Prothèse Fixe & Mobile</h3>
+                <p>Réhabilitation globale fonctionnelle occlusale. Couronnes zircone transvissées, bridges anatomiques étendus, et prothèses amovibles à ancrage de haute tenue.</p>
+                <a href="#appointment" class="card-link">En savoir plus</a>
             </div>
         </div>
     </section>
 
     <section id="tarifs">
-        <div class="pricing-glass-panel">
-            <div class="section-header-wrap">
-                <span class="pricing-tagline">Traitements Populaires - 2026</span>
-                <h2>Devis gratuit en 24h</h2>
+        <div class="pricing-super-panel">
+            <div class="sec-title-area">
+                <span class="pricing-tagline">Grille Tarifaire Transparente — 2026</span>
+                <h2>Devis Gratuit en 24 Heures</h2>
             </div>
 
-            <div class="pricing-row" onclick="scrollToBooking()">
-                <div class="pricing-meta">
-                    <h4>Implant dentaire</h4>
-                    <p>Implant + pilier + vis de cicatrisation</p>
+            <div class="table-row-item" onclick="routeToForm('Implant dentaire')">
+                <div class="t-meta">
+                    <h4>Implant dentaire premium</h4>
+                    <p>Comprend : Implant chirurgical + pilier implantaire + vis de cicatrisation</p>
                 </div>
-                <div class="pricing-cost">dès 700 €</div>
+                <div class="t-cost">dès 700 €</div>
             </div>
 
-            <div class="pricing-row" onclick="scrollToBooking()">
-                <div class="pricing-meta">
-                    <h4>Facette E-max</h4>
-                    <p>Par dent - Ivoclar premium</p>
+            <div class="table-row-item" onclick="routeToForm('Facette E-max')">
+                <div class="t-meta">
+                    <h4>Facette E-max pure</h4>
+                    <p>Par unité d'élément - Matériaux d'exception Ivoclar Premium</p>
                 </div>
-                <div class="pricing-cost">dès 300 €</div>
+                <div class="t-cost">dès 300 €</div>
             </div>
 
-            <div class="pricing-row" onclick="scrollToBooking()">
-                <div class="pricing-meta">
+            <div class="table-row-item" onclick="routeToForm('All-on-4 / All-on-6')">
+                <div class="t-meta">
                     <h4>All-on-4 / All-on-6</h4>
-                    <p>Arcade complète fixe</p>
+                    <p>Réhabilitation complète d'arcade fixe ancrée de manière permanente</p>
                 </div>
-                <div class="pricing-cost">dès 4 000 €</div>
+                <div class="t-cost">dès 4 000 €</div>
             </div>
 
-            <div class="pricing-row" onclick="scrollToBooking()">
-                <div class="pricing-meta">
-                    <h4>Invisalign</h4>
-                    <p>Aligneurs transparents</p>
+            <div class="table-row-item" onclick="routeToForm('Invisalign')">
+                <div class="t-meta">
+                    <h4>Orthodontie Invisalign</h4>
+                    <p>Traitement complet par aligneurs transparents invisibles séquentiels</p>
                 </div>
-                <div class="pricing-cost">dès 2 500 €</div>
+                <div class="t-cost">dès 2 500 €</div>
             </div>
 
-            <div class="pricing-row" onclick="scrollToBooking()">
-                <div class="pricing-meta">
-                    <h4>Chirurgie esthétique</h4>
-                    <p>Rhinoplastie, liposuccion...</p>
+            <div class="table-row-item" onclick="routeToForm('Chirurgie esthétique')">
+                <div class="t-meta">
+                    <h4>Chirurgie maxillo-faciale & esthétique</h4>
+                    <p>Interventions correctrices spécialisées : Rhinoplastie, liposuccion faciale...</p>
                 </div>
-                <div class="pricing-cost">Sur devis</div>
+                <div class="t-cost">Sur devis</div>
             </div>
         </div>
     </section>
 
     <section id="cases">
-        <div class="section-header-wrap">
+        <div class="sec-title-area">
+            <span>Résultats Cliniques Uniques</span>
             <h2>Changez votre sourire, Changez votre vie</h2>
         </div>
         
-        <div class="slider-caption">Cas N°1 : Esthétique Globale</div>
-        <div class="slider-wrapper-box">
-            <div class="image-layer layer-before"></div>
-            <div class="layer-after-clip-container">
-                <div class="image-layer layer-after-actual"></div>
+        <div class="lbl-caption">Cas Clinique N°1 : Restructuration Esthétique</div>
+        <div class="slider-viewport-box">
+            <div class="canvas-layer layer-b"></div>
+            <div class="clip-mask-host">
+                <div class="canvas-layer layer-a-fixed"></div>
             </div>
-            <div class="badge badge-before">Avant</div>
-            <div class="badge badge-after">Après</div>
-            <div class="slider-bar-divider"><div class="thumb-button">⬌</div></div>
+            <div class="tag-pill pill-b">Avant</div>
+            <div class="tag-pill pill-a">Après</div>
+            <div class="slider-ctrl-bar"><div class="ctrl-thumb">⬌</div></div>
         </div>
 
-        <div class="slider-caption">Cas N°2 : Harmonisation</div>
-        <div class="slider-wrapper-box case-2">
-            <div class="image-layer layer-before"></div>
-            <div class="layer-after-clip-container">
-                <div class="image-layer layer-after-actual"></div>
+        <div class="lbl-caption">Cas Clinique N°2 : Harmonisation Globale Arcade</div>
+        <div class="slider-viewport-box case-2-scope">
+            <div class="canvas-layer layer-b"></div>
+            <div class="clip-mask-host">
+                <div class="canvas-layer layer-a-fixed"></div>
             </div>
-            <div class="badge badge-before">Avant</div>
-            <div class="badge badge-after">Après</div>
-            <div class="slider-bar-divider"><div class="thumb-button">⬌</div></div>
+            <div class="tag-pill pill-b">Avant</div>
+            <div class="tag-pill pill-a">Après</div>
+            <div class="slider-ctrl-bar"><div class="ctrl-thumb">⬌</div></div>
         </div>
     </section>
 
-    <section id="gallery-carousel-view">
-        <div class="section-header-wrap">
+    <section id="gallery">
+        <div class="sec-title-area">
+            <span>Environnement Clinique</span>
             <h2>Notre Cabinet en Images</h2>
         </div>
-        <div class="infinite-carousel-container">
-            <div class="carousel-infinite-track">
-                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=400" alt="Cabinet View 1">
-                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400" alt="Cabinet View 2">
-                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400" alt="Cabinet View 3">
-                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=400" alt="Cabinet View 4">
-                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=400" alt="Cabinet View 5">
-                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=400" alt="Cabinet View 1">
-                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400" alt="Cabinet View 2">
-                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400" alt="Cabinet View 3">
-                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=400" alt="Cabinet View 4">
-                <img class="carousel-slide-item" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=400" alt="Cabinet View 5">
+        <div class="infinite-carousel-shell">
+            <div class="carousel-h-track" id="photoTrack">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=400" alt="Cabinet Zone 1">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400" alt="Cabinet Zone 2">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400" alt="Cabinet Zone 3">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=400" alt="Cabinet Zone 4">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=400" alt="Cabinet Zone 5">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=400" alt="Cabinet Zone 6">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=400" alt="Cabinet Zone 1">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400" alt="Cabinet Zone 2">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400" alt="Cabinet Zone 3">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=400" alt="Cabinet Zone 4">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=400" alt="Cabinet Zone 5">
+                <img class="carousel-photo" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=400" alt="Cabinet Zone 6">
             </div>
         </div>
     </section>
 
     <section id="appointment">
-        <div class="section-header-wrap">
+        <div class="sec-title-area">
+            <span>Consultation Secrétariat</span>
             <h2>Réservez Votre Rendez-vous</h2>
         </div>
-        <form id="activeBookingForm">
-            <div class="form-element">
-                <label for="clientName">Nom complet <span>*</span></label>
-                <input type="text" id="clientName" required placeholder="Ex: Anis Benjelloun">
+        <form id="portfolioFormEngine">
+            <div class="f-group-row">
+                <div class="f-group">
+                    <label for="uName">Nom complet <span>*</span></label>
+                    <input type="text" id="uName" required placeholder="Ex: Karim Tazi">
+                </div>
+                <div class="f-group">
+                    <label for="uPhone">Numéro de téléphone <span>*</span></label>
+                    <input type="tel" id="uPhone" required placeholder="Ex: +212 661 000 000">
+                </div>
             </div>
-            <div class="form-element">
-                <label for="clientPhone">Numéro de téléphone <span>*</span></label>
-                <input type="tel" id="clientPhone" required placeholder="Ex: +212 600 000 000">
+            <div class="f-group">
+                <label for="uService">Traitement ou spécialité ciblée</label>
+                <select id="uService">
+                    <option value="Consultation standard">Consultation Générale / Bilan</option>
+                    <option value="Implant dentaire">Implantologie Avancée</option>
+                    <option value="Facette E-max">Dentisterie Esthétique (Facettes E-max)</option>
+                    <option value="All-on-4 / All-on-6">All-on-4 ou All-on-6 fixed bridge</option>
+                    <option value="Invisalign">Orthodontie Invisalign</option>
+                    <option value="Chirurgie esthétique">Chirurgie maxillo-faciale</option>
+                </select>
             </div>
-            <div class="form-element">
-                <label for="clientMessage">Message ou descriptif de votre besoin</label>
-                <textarea id="clientMessage" rows="4" placeholder="Décrivez les soins souhaités..."></textarea>
+            <div class="f-group">
+                <label for="uMessage">Message ou descriptif de votre besoin clinique</label>
+                <textarea id="uMessage" rows="5" placeholder="Indiquez vos disponibilités ou l'urgence de vos soins..."></textarea>
             </div>
-            <button type="submit" class="form-submit-action">Envoyer la demande</button>
+            <button type="submit" class="btn-submit">Envoyer la demande de consultation</button>
         </form>
     </section>
 
+    <footer>
+        <p>&copy; 2026 Centre Dentaire Bahr Tanger. Cabinet d'Excellence du Dr. Bahraoui. Tous droits réservés.</p>
+    </footer>
+
     <script>
-        // Trigger setup for navigation row components
-        function scrollToBooking() {
+        // Form field routing helper
+        function routeToForm(serviceVal) {
+            const selectElement = document.getElementById('uService');
+            selectElement.value = serviceVal;
             document.getElementById('appointment').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Global menu handler
-        document.getElementById('globalMenuBtn').addEventListener('click', function() {
-            alert("Menu Principal Activé — Sélection des traitements et prise de rendez-vous en ligne.");
+        // Global menu control loop
+        document.getElementById('navActionMenu').addEventListener('click', () => {
+            alert("Système de Navigation Global Activé — Redirection vers le standard médical.");
         });
 
-        // Precision Mask Overlay Sliders Tracking Engine (Non-Stretching)
-        const setupMaskSliders = () => {
-            document.querySelectorAll('.slider-wrapper-box').forEach(slider => {
-                const clipContainer = slider.querySelector('.layer-after-clip-container');
-                const dividerBar = slider.querySelector('.slider-bar-divider');
+        // Exact Aspect Clipping Mask Mask Mechanics Core
+        const buildProportionalMaskSliders = () => {
+            document.querySelectorAll('.slider-viewport-box').forEach(viewport => {
+                const mask = viewport.querySelector('.clip-mask-host');
+                const fixedImage = viewport.querySelector('.layer-a-fixed');
+                const divider = viewport.querySelector('.slider-ctrl-bar');
 
-                const trackPointer = (clientX) => {
-                    const bounds = slider.getBoundingClientRect();
-                    let distance = clientX - bounds.left;
-                    
-                    if (distance < 0) distance = 0;
-                    if (distance > bounds.width) distance = bounds.width;
-                    
-                    const ratioPercentage = (distance / bounds.width) * 100;
-                    
-                    // Modifies container width bounds without altering nested image size dimensions
-                    clipContainer.style.width = `${ratioPercentage}%`;
-                    dividerBar.style.left = `${ratioPercentage}%`;
+                const syncLayoutWidth = () => {
+                    const bounds = viewport.getBoundingClientRect();
+                    fixedImage.style.width = `${bounds.width}px`;
                 };
 
-                // Mouse Event Handling
-                slider.addEventListener('mousemove', (e) => {
-                    if (e.buttons === 1) trackPointer(e.clientX);
-                });
-                slider.addEventListener('mousedown', (e) => trackPointer(e.clientX));
+                const trackInteraction = (clientX) => {
+                    const bounds = viewport.getBoundingClientRect();
+                    let localX = clientX - bounds.left;
+                    
+                    if (localX < 0) localX = 0;
+                    if (localX > bounds.width) localX = bounds.width;
+                    
+                    const calculatedRatio = (localX / bounds.width) * 100;
+                    
+                    // Aligns boundaries without modifying interior coordinates
+                    mask.style.width = `${calculatedRatio}%`;
+                    divider.style.left = `${calculatedRatio}%`;
+                };
 
-                // Touch Event Handling for Mobile devices
-                slider.addEventListener('touchmove', (e) => {
-                    trackPointer(e.touches[0].clientX);
-                }, { passive: true });
-                slider.addEventListener('touchstart', (e) => {
-                    trackPointer(e.touches[0].clientX);
-                }, { passive: true });
+                // Resize matching logic
+                window.addEventListener('resize', syncLayoutWidth);
+                syncLayoutWidth();
+
+                // Desktop loops
+                viewport.addEventListener('mousemove', (e) => { if(e.buttons === 1) trackInteraction(e.clientX); });
+                viewport.addEventListener('mousedown', (e) => trackInteraction(e.clientX));
+
+                // Touch handling safely decoupled
+                viewport.addEventListener('touchmove', (e) => { trackInteraction(e.touches[0].clientX); }, { passive: true });
+                viewport.addEventListener('touchstart', (e) => { trackInteraction(e.touches[0].clientX); }, { passive: true });
             });
         };
 
-        // Form processing engine
-        document.getElementById('activeBookingForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const targetedUser = document.getElementById('clientName').value;
-            alert(`Merci ${targetedUser}! Votre formulaire de consultation a été traité avec succès. Notre secrétariat médical à Tanger vous contactera sous peu.`);
+        // Form processing execution loop
+        document.getElementById('portfolioFormEngine').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const clientName = document.getElementById('uName').value;
+            const chosenTreatment = document.getElementById('uService').value;
+            alert(`Demande reçue ! Merci ${clientName}. Votre dossier concernant le traitement "${chosenTreatment}" a été transmis au secrétariat du Dr. Bahraoui à Tanger.`);
             this.reset();
         });
 
-        window.addEventListener('DOMContentLoaded', setupMaskSliders);
+        // Trigger logic on load completion
+        window.addEventListener('DOMContentLoaded', () => {
+            buildProportionalMaskSliders();
+        });
     </script>
 </body>
 </html>
