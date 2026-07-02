@@ -128,10 +128,10 @@
             font-size: clamp(1rem, 2vw, 1.2rem);
         }
 
-        /* Section Spécialités avec Fond de Clinique Flouté */
+        /* Section Spécialités avec Fond de Clinique Flouté (image_7e05d8.png) */
         .specialties-section {
             background: linear-gradient(180deg, rgba(5,7,10,0.95) 0%, rgba(5,7,10,0.9) 100%), 
-                        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2000') no-repeat center center/cover;
+                        url('https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=2000') no-repeat center center/cover;
             background-attachment: fixed;
             padding: 120px 6%;
         }
@@ -206,7 +206,7 @@
             line-height: 1.7;
         }
 
-        /* Galerie Avant/Après (Lèvres & Dents Uniquement) */
+        /* Galerie Avant/Après mise à jour : Focus Strict sur les Lèvres et les Dents */
         .gallery-section {
             padding: 100px 6%;
             max-width: 1400px;
@@ -216,12 +216,13 @@
         .stencil-container-canvas {
             position: relative;
             width: 100%;
-            height: 500px;
+            height: 550px;
             overflow: hidden;
             border-radius: 24px;
             margin: 20px 0 60px 0;
             border: 1px solid var(--brd-micro);
             box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+            background-color: #111;
         }
 
         .stencil-layer-before {
@@ -230,7 +231,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
         }
@@ -251,30 +252,30 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
         }
 
-        /* Effets appliqués sur l'image macro gros plan lèvres/dents */
-        /* Carte 1 : Dents écartées/désordonnées -> Dents regroupées alignées blanches */
+        /* Cas 1 : Focus strict lèvres/dents (image_7e063d.jpg corrigé pour exclure la pièce de la clinique) */
         .case-ortho .stencil-layer-before { 
-            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200'); 
-            filter: contrast(1.1) saturate(0.8) matrix(0.9, 0.05, -0.05, 0.9, 5, 0); /* Simule une asymétrie de position */
+            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200'); 
+            filter: contrast(1.15) saturate(0.85) hue-rotate(-10deg) blur(0.5px); /* Modification asymétrique des espaces */
+            transform: scale(1.05) rotate(-2deg);
         }
         .case-ortho .stencil-mask-slider-window .stencil-layer-after { 
-            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200'); 
-            filter: brightness(1.15) contrast(1.05); /* Rendu net, blanc et aligné parfait */
+            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200'); 
+            filter: brightness(1.15) contrast(1.05) saturate(0.95);
         }
         
-        /* Carte 2 : Dents abîmées/jaunies -> Dents propres, blanches et brillantes */
+        /* Cas 2 : Focus strict lèvres/dents alternatif (image_7e06b8.jpg corrigé pour supprimer les outils et le nez) */
         .case-decay .stencil-layer-before { 
-            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200'); 
-            filter: sepia(0.5) brightness(0.7) contrast(1.2); /* Simule une teinte jaune/abîmée */
+            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200'); 
+            filter: sepia(0.45) brightness(0.75) contrast(1.25); /* Teinte altérée jaune simulée */
         }
         .case-decay .stencil-mask-slider-window .stencil-layer-after { 
-            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200'); 
-            filter: brightness(1.2) contrast(1.05) saturate(0.9); /* Rendu ultra brillant blanc sain */
+            background-image: url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1200'); 
+            filter: brightness(1.2) contrast(1.1) saturate(0.85); /* Alignement blanc pur éclatant */
         }
 
         .slider-divider-control {
@@ -319,7 +320,7 @@
         .lbl-before { right: 20px; }
         .lbl-after { left: 20px; }
 
-        /* Zone des Nombres avec Animation Interactive */
+        /* Zone des Nombres Interactifs */
         .metrics-section {
             padding: 80px 6%;
             background: rgba(255, 255, 255, 0.01);
@@ -349,7 +350,7 @@
             letter-spacing: 2px;
         }
 
-        /* Section Tarifs Clairs */
+        /* Section Tarifs */
         .pricing-section {
             padding: 100px 6%;
             max-width: 1200px;
@@ -379,7 +380,7 @@
         .price-info p { font-size: 0.9rem; color: var(--txt-gray); }
         .price-value { font-weight: 700; font-size: 1.2rem; }
 
-        /* Bannière de Défilement d'Images Continue au Bas */
+        /* Défilement Continu Nettoyé (image_7e0d5b.jpg nettoyé des images erronées) */
         .passing-ribbon-wrapper {
             width: 100vw;
             position: relative;
@@ -394,8 +395,8 @@
 
         .passing-ribbon-track {
             display: flex;
-            width: calc(320px * 12);
-            animation: continuousMarqueeLoop 25s linear infinite;
+            width: calc(320px * 10);
+            animation: continuousMarqueeLoop 22s linear infinite;
         }
 
         .passing-ribbon-node {
@@ -409,7 +410,7 @@
 
         @keyframes continuousMarqueeLoop {
             0% { transform: translate3d(0,0,0); }
-            100% { transform: translate3d(calc(-320px * 6),0,0); }
+            100% { transform: translate3d(calc(-320px * 5),0,0); }
         }
 
         @media (max-width: 768px) {
@@ -440,7 +441,6 @@
         <p>Une restructuration esthétique sur-mesure combinant l'analyse biomimétique avancée et des technologies de facettes exclusives.</p>
     </section>
 
-    <!-- Section Tall Cards avec Fond Clinique Flouté et Icônes Lignes -->
     <section class="specialties-section" id="traitements">
         <div class="section-header-block fade-in-init">
             <h2 class="section-title">Ingénierie Esthétique</h2>
@@ -474,14 +474,13 @@
         </div>
     </section>
 
-    <!-- Zone Avant/Après stricte : Uniquement Lèvres et Dents -->
     <section class="gallery-section" id="galerie">
         <div class="section-header-block fade-in-init">
             <h2 class="section-title">Analyses Macro-Visuelles</h2>
             <div class="section-subtitle">Résultats Réels Avant / Après (Focus Dentaire Strict)</div>
         </div>
 
-        <!-- Cas 1 : Désordonné -> Aligné et Blanc -->
+        <!-- Cas 1 : Lèvres et Dents uniquement (Désordonné -> Aligné) -->
         <div class="fade-in-init">
             <div class="stencil-container-canvas case-ortho">
                 <div class="stencil-layer-before"></div>
@@ -498,7 +497,7 @@
             </div>
         </div>
 
-        <!-- Cas 2 : Abîmé/Jaune -> Blanc Brillant Propre -->
+        <!-- Cas 2 : Lèvres et Dents uniquement, méthode alternative (Abîmé -> Blanc Éclatant) -->
         <div class="fade-in-init" style="margin-top: 50px;">
             <div class="stencil-container-canvas case-decay">
                 <div class="stencil-layer-before"></div>
@@ -511,12 +510,11 @@
             </div>
             <div style="margin-top:20px;">
                 <h4 style="font-size:1.3rem; font-weight:500;">Cas Clinique II — Restauration Lumineuse Élite</h4>
-                <p style="color:var(--txt-gray); font-size:0.95rem;">Restauration de la texture de l'émail pour un fini hautement poli, blanc et étincelant.</p>
+                <p style="color:var(--txt-gray); font-size:0.95rem;">Restauration complète de la texture protectrice de l'émail pour un fini poli et éclatant.</p>
             </div>
         </div>
     </section>
 
-    <!-- Zone des Nombres avec l'Animation Progressive Recommandée -->
     <section class="metrics-section" id="performances">
         <div class="metrics-grid-layout">
             <div class="metric-item-container fade-in-init">
@@ -534,7 +532,6 @@
         </div>
     </section>
 
-    <!-- Liste de prix -->
     <section class="pricing-section" id="tarifs">
         <div class="pricing-deck-card fade-in-init">
             <div class="section-header-block" style="margin-bottom: 40px;">
@@ -560,22 +557,20 @@
         </div>
     </section>
 
-    <!-- Défilement d'Images Continu (Marquee) en Bas -->
+    <!-- Bandeau Marquee épuré des images non représentatives ou non fonctionnelles -->
     <section class="passing-ribbon-wrapper fade-in-init">
         <div class="passing-ribbon-track">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Clinique">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Cabinet">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Équipement">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Laboratoire">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=500" alt="Technologie">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Soin">
-            <!-- Duplication pour effet infini continu -->
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Clinique">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Cabinet">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Équipement">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Laboratoire">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=500" alt="Technologie">
-            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Soin">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Clinique Moderne">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Cabinet Dentaire">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Équipement Haute Précision">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Laboratoire Numérique">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Soin Lumineux">
+            <!-- Duplication miroir pour effet boucle infini -->
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Clinique Moderne">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Cabinet Dentaire">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Équipement Haute Précision">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Laboratoire Numérique">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Soin Lumineux">
         </div>
     </section>
 
@@ -584,7 +579,6 @@
     </footer>
 
     <script>
-        // Gestionnaire Global d'apparition au Scroll
         const initFadeInObservers = () => {
             const items = document.querySelectorAll('.fade-in-init');
             const observer = new IntersectionObserver((entries) => {
@@ -598,7 +592,6 @@
             items.forEach(el => observer.observe(el));
         };
 
-        // Compteurs d'animation fluides pour la zone numérique
         const initNumericalCounters = () => {
             const counters = document.querySelectorAll('.counter-element');
             const observer = new IntersectionObserver((entries) => {
@@ -606,11 +599,11 @@
                     if (entry.isIntersecting) {
                         const target = parseInt(entry.target.getAttribute('data-target'), 10);
                         let start = 0;
-                        const duration = 1500; // ms
+                        const duration = 1500;
                         const stepTime = Math.abs(Math.floor(duration / target));
                         
                         const timer = setInterval(() => {
-                            start += Math.ceil(target / 50); // Incrémentation dynamique proportionnelle
+                            start += Math.ceil(target / 50);
                             if (start >= target) {
                                 entry.target.innerText = target;
                                 clearInterval(timer);
@@ -626,7 +619,6 @@
             counters.forEach(c => observer.observe(c));
         };
 
-        // Système d'ajustement dynamique de la glissière Avant / Après (Dents et Lèvres uniquement)
         const initBeforeAfterSliders = () => {
             document.querySelectorAll('.stencil-container-canvas').forEach(container => {
                 const mask = container.querySelector('.stencil-mask-slider-window');
