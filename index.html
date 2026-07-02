@@ -3,345 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centre Dentaire Bahr - Template</title>
+    <title>Centre Dentaire Bahr</title>
     <style>
-        :root {
-            --bg-dark: #121212;
-            --card-bg: #1e1e1e;
-            --accent-color: #ffffff;
-            --text-muted: #a0a0a0;
-            --border-color: #333333;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: #ffffff;
-            line-height: 1.6;
-            padding-bottom: 50px;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .logo {
-            font-weight: bold;
-            letter-spacing: 2px;
-            font-size: 1.2rem;
-            text-align: center;
-        }
-
-        .menu-btn {
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000') no-repeat center center/cover;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-
-        .cta-btn {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 25px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s;
-        }
-
-        .cta-btn:hover {
-            background-color: #e0e0e0;
-        }
-
-        section {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            text-align: center;
-            font-weight: 400;
-        }
-
-        /* Specialties Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .service-card {
-            background-color: var(--card-bg);
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-        }
-
-        .service-card h3 {
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Pricing Block */
-        .pricing-box {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 30px;
-            border: 1px solid var(--border-color);
-        }
-
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .pricing-header span {
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-        }
-
-        .pricing-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .pricing-item:last-of-type {
-            border-bottom: none;
-        }
-
-        .price-details h4 {
-            font-weight: 500;
-        }
-
-        .price-details p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .price-value {
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        /* Before/After Slider Container */
-        .slider-section h3 {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .image-slider-container {
-            position: relative;
-            width: 100%;
-            height: 350px;
-            overflow: hidden;
-            border-radius: 12px;
-            margin-top: 10px;
-            user-select: none;
-        }
-
-        .slider-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .image-before {
-            background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800'); /* Placeholder dental image */
-        }
-
-        .image-after {
-            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=800'); /* Placeholder fixed dental image */
-            width: 50%; /* Initial split position */
-        }
-
-        /* Specific case styling mimicking video colors for realism */
-        .case-2 .image-before { filter: sepia(0.3) hue-rotate(-30deg); } /* Simulates unaligned/yellowed teeth */
-
-        .slider-resize-bar {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
-            background-color: #ffffff;
-            cursor: ew-resize;
-            transform: translateX(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slider-handle {
-            width: 40px;
-            height: 40px;
-            background-color: #ffffff;
-            color: #000000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
-            font-size: 0.8rem;
-        }
-
-        .label-tag {
-            position: absolute;
-            top: 15px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 5px 12px;
-            font-size: 0.75rem;
-            border-radius: 4px;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        .label-before { left: 15px; }
-        .label-after { right: 15px; }
-
-        /* Form */
-        form {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        label span {
-            color: #ff4d4d;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            background-color: #121212;
-            border: 1px solid var(--border-color);
-            color: #ffffff;
-            border-radius: 6px;
-            font-size: 1rem;
-        }
-
-        input:focus, textarea:focus {
-            outline: 1px solid #ffffff;
-        }
-
-        .submit-btn {
-            background-color: #ffffff;
-            color: #000000;
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .submit-btn:hover {
-            background-color: #e0e0e0;
-        }
+        :root{--bg:#0b0c10;--panel:rgba(255,255,255,0.04);--blur:backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);--border:rgba(255,255,255,0.08);--accent:#ffffff;--text:#e0e0e0;--muted:#8a8a93}*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;scroll-behavior:smooth}body{background-color:var(--bg);color:var(--accent);overflow-x:hidden;line-height:1.6}header{display:flex;justify-content:space-between;align-items:center;padding:24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(11,12,16,0.8);z-index:100;var(--blur)}.logo{font-weight:700;letter-spacing:3px;font-size:1.1rem;line-height:1.3;text-transform:uppercase}.menu-icon{font-size:1.6rem;cursor:pointer;transition:transform 0.2s}.menu-icon:hover{transform:scale(1.1)}.hero{text-align:center;padding:120px 24px 80px;background:linear-gradient(rgba(11,12,16,0.85),rgba(11,12,16,0.95)),url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200') no-repeat center center/cover;min-height:75vh;display:flex;flex-direction:column;justify-content:center;align-items:center}.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:300;letter-spacing:-0.5px;line-height:1.2;max-width:800px;margin-bottom:24px;opacity:0;transform:translateY(30px);animation:fIn 0.8s cubic-bezier(0.2,0.8,0.2,1) forwards}.hero p{color:var(--muted);max-width:620px;font-size:clamp(1rem,2.5vw,1.15rem);margin-bottom:40px;opacity:0;transform:translateY(30px);animation:fIn 0.8s cubic-bezier(0.2,0.8,0.2,1) 0.2s forwards}.cta-btn{background:var(--accent);color:var(--bg);padding:16px 36px;border:none;border-radius:30px;font-weight:600;font-size:1rem;cursor:pointer;text-decoration:none;transition:transform 0.2s,background 0.2s;opacity:0;transform:translateY(30px);animation:fIn 0.8s cubic-bezier(0.2,0.8,0.2,1) 0.4s forwards}.cta-btn:hover{background:#e1e1e6;transform:scale(1.02)}section{padding:80px 24px;max-width:1000px;margin:0 auto}h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:48px;text-align:center;font-weight:400;letter-spacing:-0.5px}.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}.glass-card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:32px;var(--blur);transition:transform 0.3s,border-color 0.3s;display:flex;flex-direction:column;gap:16px}.glass-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,0.2)}.card-icon{width:48px;height:48px;background:rgba(255,255,255,0.06);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}.glass-card h3{font-size:1.3rem;font-weight:500;letter-spacing:-0.3px}.glass-card p{color:var(--muted);font-size:0.95rem;line-height:1.5}.pricing-box{background:var(--panel);border:1px solid var(--border);border-radius:24px;padding:40px 32px;var(--blur)}.pricing-header{text-align:center;margin-bottom:32px}.pricing-header span{text-transform:uppercase;font-size:0.8rem;letter-spacing:3px;color:var(--muted);display:block;margin-bottom:8px}.pricing-item{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--border);transition:background 0.2s;border-radius:8px;padding-left:12px;padding-right:12px}.pricing-item:hover{background:rgba(255,255,255,0.02)}.price-details h4{font-weight:500;font-size:1.1rem;margin-bottom:4px}.price-details p{font-size:0.85rem;color:var(--muted)}.price-value{font-weight:600;font-size:1.1rem;color:var(--accent)}.slider-container{position:relative;width:100%;height:450px;overflow:hidden;border-radius:20px;margin:32px 0 56px;border:1px solid var(--border)}.slider-img{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat}.img-before{background-image:url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1000')}.img-after{background-image:url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1000');width:50%}.case-2 .img-before{background-image:url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1000');filter:saturate(0.5) sepia(0.25)}.case-2 .img-after{background-image:url('https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=1000')}.resize-bar{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--accent);cursor:ew-resize;transform:translateX(-50%);z-index:10;display:flex;align-items:center;justify-content:center}.handle{width:44px;height:44px;background:var(--accent);color:var(--bg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 0 20px rgba(0,0,0,0.4);font-size:0.9rem;letter-spacing:-1px}.tag{position:absolute;bottom:20px;background:rgba(11,12,16,0.75);padding:6px 14px;font-size:0.75rem;border-radius:6px;text-transform:uppercase;font-weight:600;letter-spacing:1px;var(--blur);border:1px solid var(--border);z-index:5}.tag-b{left:20px}.tag-a{right:20px}.slider-title{font-size:1.1rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:24px}form{background:var(--panel);padding:40px;border-radius:24px;border:1px solid var(--border);var(--blur);max-width:600px;margin:0 auto}.form-group{margin-bottom:24px}label{display:block;margin-bottom:8px;font-size:0.9rem;color:var(--muted);font-weight:500}label span{color:#ff4d4d}input,textarea{width:100%;padding:14px;background:rgba(0,0,0,0.2);border:1px solid var(--border);color:var(--accent);border-radius:10px;font-size:1rem;transition:border-color 0.2s}input:focus,textarea:focus{outline:none;border-color:var(--accent)}.submit-btn{background:var(--accent);color:var(--bg);width:100%;padding:16px;border:none;border-radius:10px;font-size:1rem;font-weight:600;cursor:pointer;transition:background 0.2s}.submit-btn:hover{background:#e1e1e6}.carousel-wrapper{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;overflow:hidden;padding:40px 0;background:rgba(255,255,255,0.01);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.carousel-track{display:flex;width:calc(300px * 10);animation:scrollTrack 25s linear infinite}.carousel-track:hover{animation-play-state:paused}.carousel-img{width:280px;height:200px;margin:0 10px;object-fit:cover;border-radius:12px;border:1px solid var(--border);filter:grayscale(20%);transition:filter 0.3s}.carousel-img:hover{filter:grayscale(0%)}@keyframes scrollTrack{0%{transform:translateX(0)}100%{transform:translateX(calc(-300px * 5))}}@keyframes fIn{to{opacity:1;transform:translateY(0)}}@media(max-width:768px){section{padding:60px 16px}.pricing-box,form{padding:24px}.slider-container{height:320px}.carousel-track{animation-duration:18s}}
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">CENTRE DENTAIRE<br>BAHR.</div>
-        <div class="menu-btn">&#9776;</div>
+        <div class="logo">Centre Dentaire<br>Bahr.</div>
+        <div class="menu-icon" id="menuBtn">&#9776;</div>
     </header>
 
-    <!-- Hero Section -->
     <div class="hero">
         <h1>Visez la Perfection Dentaire Chez DR BAHRAOUI</h1>
         <p>Reconnue Comme La Clinique Dentaire N°1 À Tanger. Profitez De Soins Esthétiques Et Fonctionnels De La Plus Haute Qualité Dans Un Environnement Moderne Et Sans Stress.</p>
         <a href="#appointment" class="cta-btn">Prendre Rendez-vous</a>
     </div>
 
-    <!-- Nos Spécialités Section -->
-    <section>
+    <section id="specialties">
         <h2>Nos Spécialités</h2>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="glass-card">
+                <div class="card-icon">🦷</div>
                 <h3>Implantologie</h3>
                 <p>Remplacez vos dents manquantes de manière permanente et sûre avec nos solutions d'implantologie dentaire.</p>
             </div>
-            <div class="service-card">
+            <div class="glass-card">
+                <div class="card-icon">✨</div>
                 <h3>Dentisterie esthétique</h3>
-                <p>Révélez la beauté naturelle de votre sourire avec nos services de dentisterie esthétique (blanchiment, facettes, couronnes).</p>
+                <p>Révélez la beauté naturelle de votre sourire avec nos services de dentisterie esthétique : blanchiment, facettes, couronnes.</p>
             </div>
-            <div class="service-card">
+            <div class="glass-card">
+                <div class="card-icon">💎</div>
                 <h3>Prothèse fixe et mobile</h3>
-                <p>Restaurez la fonction et l'esthétique de votre sourire avec nos options de prothèses dentaires fixes et mobiles.</p>
+                <p>Restaurez la fonction et l'esthétique de votre sourire avec nos options de prothèses dentaires avancées.</p>
             </div>
         </div>
     </section>
 
-    <!-- Tarifs / Pricing Section -->
-    <section>
+    <section id="tarifs">
         <div class="pricing-box">
             <div class="pricing-header">
                 <span>Traitements Populaires - 2026</span>
@@ -390,101 +91,106 @@
         </div>
     </section>
 
-    <!-- Before / After Sliders Section -->
-    <section class="slider-section">
+    <section id="cases">
         <h2>Changez votre sourire, Changez votre vie</h2>
         
-        <h3>CAS N°1 : ESTHÉTIQUE GLOBALE</h3>
-        <div class="image-slider-container">
-            <div class="slider-image image-before"></div>
-            <div class="slider-image image-after"></div>
-            <div class="label-tag label-before">Avant</div>
-            <div class="label-tag label-after">Après</div>
-            <div class="slider-resize-bar">
-                <div class="slider-handle">&lt;&gt;</div>
-            </div>
+        <div class="slider-title">Cas N°1 : Esthétique Globale</div>
+        <div class="slider-container">
+            <div class="slider-img img-before"></div>
+            <div class="slider-img img-after"></div>
+            <div class="tag tag-b">Avant</div>
+            <div class="tag tag-a">Après</div>
+            <div class="resize-bar"><div class="handle">⬌</div></div>
         </div>
 
-        <h3>CAS N°2 : HARMONISATION</h3>
-        <div class="image-slider-container case-2">
-            <div class="slider-image image-before"></div>
-            <div class="slider-image image-after"></div>
-            <div class="label-tag label-before">Avant</div>
-            <div class="label-tag label-after">Après</div>
-            <div class="slider-resize-bar">
-                <div class="slider-handle">&lt;&gt;</div>
+        <div class="slider-title">Cas N°2 : Harmonisation</div>
+        <div class="slider-container case-2">
+            <div class="slider-img img-before"></div>
+            <div class="slider-img img-after"></div>
+            <div class="tag tag-b">Avant</div>
+            <div class="tag tag-a">Après</div>
+            <div class="resize-bar"><div class="handle">⬌</div></div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Notre Cabinet en Images</h2>
+        <div class="carousel-wrapper">
+            <div class="carousel-track">
+                <!-- Original Items -->
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=400" alt="Cabinet 1">
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400" alt="Cabinet 2">
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400" alt="Cabinet 3">
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=400" alt="Cabinet 4">
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=400" alt="Cabinet 5">
+                <!-- Infinite Loop Clones -->
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=400" alt="Cabinet 1">
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400" alt="Cabinet 2">
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400" alt="Cabinet 3">
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=400" alt="Cabinet 4">
+                <img class="carousel-img" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=400" alt="Cabinet 5">
             </div>
         </div>
     </section>
 
-    <!-- Interactive Appointment Form -->
     <section id="appointment">
         <h2>Réservez Votre Rendez-vous</h2>
-        <form id="bookingForm">
+        <form id="appointmentForm">
             <div class="form-group">
-                <label for="name">Nom <span>*</span></label>
-                <input type="text" id="name" required placeholder="Votre nom complet">
+                <label for="name">Nom complet <span>*</span></label>
+                <input type="text" id="name" required placeholder="Driss El Alami">
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="votre@email.com">
-            </div>
-            <div class="form-group">
-                <label for="phone">Téléphone <span>*</span></label>
+                <label for="phone">Numéro de téléphone <span>*</span></label>
                 <input type="tel" id="phone" required placeholder="+212 600 000 000">
             </div>
             <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" rows="4" placeholder="Décrivez votre besoin..."></textarea>
+                <label for="message">Message ou descriptif de votre besoin</label>
+                <textarea id="message" rows="4" placeholder="Je souhaite prendre rendez-vous pour un bilan..."></textarea>
             </div>
-            <button type="submit" class="submit-btn">Envoyer</button>
+            <button type="submit" class="submit-btn">Envoyer la demande</button>
         </form>
     </section>
 
-    <!-- Interactive Scripts -->
     <script>
-        // --- Functional Before/After Slider Logic ---
-        const sliders = document.querySelectorAll('.image-slider-container');
-
-        sliders.forEach(slider => {
-            const afterImage = slider.querySelector('.image-after');
-            const resizeBar = slider.querySelector('.slider-resize-bar');
-            
-            const moveSlider = (clientX) => {
-                const rect = slider.getBoundingClientRect();
-                const x = clientX - rect.left;
-                let percentage = (x / rect.width) * 100;
-                
-                // Keep boundaries inside container
-                if (percentage < 0) percentage = 0;
-                if (percentage > 100) percentage = 100;
-                
-                afterImage.style.width = `${percentage}%`;
-                resizeBar.style.left = `${percentage}%`;
-            };
-
-            // Mouse handling
-            slider.addEventListener('mousemove', (e) => {
-                if (e.buttons === 1) moveSlider(e.clientX);
-            });
-            slider.addEventListener('mousedown', (e) => moveSlider(e.clientX));
-
-            // Touch handling for mobile devices
-            slider.addEventListener('touchmove', (e) => {
-                moveSlider(e.touches[0].clientX);
-            });
-            slider.addEventListener('touchstart', (e) => moveSlider(e.touches[0].clientX));
+        // Menu activation trigger
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            alert("Menu principal accessible — Redirection vers l'accueil de la clinique.");
         });
 
-        // --- Functional Appointment Submission Logic ---
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
+        // Precision non-stretching Image sliders
+        const initSliders = () => {
+            document.querySelectorAll('.slider-container').forEach(container => {
+                const afterImg = container.querySelector('.img-after');
+                const bar = container.querySelector('.resize-bar');
 
-            alert(`Merci ${name}! Votre demande de rendez-vous a bien été envoyée. L'équipe du Centre Dentaire Bahr vous contactera rapidement au ${phone}.`);
+                const updateSlider = (clientX) => {
+                    const rect = container.getBoundingClientRect();
+                    let offset = clientX - rect.left;
+                    if (offset < 0) offset = 0;
+                    if (offset > rect.width) offset = rect.width;
+                    
+                    const percent = (offset / rect.width) * 100;
+                    afterImg.style.width = `${percent}%`;
+                    bar.style.left = `${percent}%`;
+                };
+
+                container.addEventListener('mousemove', e => { if (e.buttons === 1) updateSlider(e.clientX); });
+                container.addEventListener('mousedown', e => updateSlider(e.clientX));
+                container.addEventListener('touchmove', e => updateSlider(e.touches[0].clientX), { passive: true });
+                container.addEventListener('touchstart', e => updateSlider(e.touches[0].clientX), { passive: true });
+            });
+        };
+
+        // Form processing logic
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const n = document.getElementById('name').value;
+            alert(`Merci ${n}. Votre demande de rendez-vous a bien été enregistrée. L'équipe médicale du Centre Dentaire Bahr vous contactera prochainement.`);
             this.reset();
         });
+
+        window.addEventListener('DOMContentLoaded', initSliders);
     </script>
 </body>
 </html>
