@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="index, follow">
-    <title>AuraDent — Haute Architecture Du Sourire & Ingénierie Esthétique</title>
+    <title>Cabinet Dentaire — Haute Architecture Du Sourire & Ingénierie Esthétique</title>
     
     <style>
         /* ==========================================================================
@@ -660,8 +660,8 @@
 
     <header class="fade-in-init">
         <div class="logo-group" onclick="window.scrollTo({top:0, behavior:'smooth'});">
-            <div class="logo-box">A</div>
-            <div class="logo-title">AuraDent</div>
+            <div class="logo-box">D</div>
+            <div class="logo-title">Dentist</div>
         </div>
         <ul class="nav-menu">
             <li><a href="#expertises">Expertises</a></li>
@@ -820,7 +820,7 @@
     </section>
 
     <footer class="fade-in-init">
-        <p>&copy; 2026 AuraDent International — Studio d'Architecture Esthétique Dentaire. Tous droits réservés.</p>
+        <p>&copy; 2026 Cabinet Dentaire — Studio d'Architecture Esthétique Dentaire. Tous droits réservés.</p>
     </footer>
 
     <script>
@@ -905,7 +905,7 @@
                 const internalRevealImage = currentCanvasContainer.querySelector('.img-layer-reveal');
                 const centralDividerControl = currentCanvasContainer.querySelector('.slider-divider-control');
 
-                if (!dynamicMaskWindow || !internalRevealImage || !centralDividerControl) return;
+                if (!dynamicMaskWindow || !internalRevealImage || centralDividerControl === null) return;
 
                 // Calage strict de la largeur de la couche supérieure
                 const synchronizedInternalImageSizing = () => {
@@ -931,7 +931,7 @@
                 window.addEventListener('resize', synchronizedInternalImageSizing);
                 synchronizedInternalImageSizing();
 
-                // Gestionnaires d'Événements Souris (Pointeurs Bureau)
+                // Gestionnaires d'Événements Souris (Pointers Bureau)
                 currentCanvasContainer.addEventListener('mousemove', (mouseEvent) => {
                     if (mouseEvent.buttons === 1) {
                         calculateAndApplyPositionShift(mouseEvent.clientX);
