@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>VeneerArt — Haute Précision Esthétique</title>
+    <title>AuraDent — Haute Architecture Du Sourire</title>
     <style>
         :root {
             --bg-deep: #05070a;
-            --bg-card: rgba(10, 15, 26, 0.6);
+            --bg-card: rgba(10, 15, 26, 0.55);
             --bg-glass: rgba(255, 255, 255, 0.02);
             --brd-micro: rgba(255, 255, 255, 0.08);
             --brd-hover: rgba(255, 255, 255, 0.25);
@@ -32,9 +32,10 @@
             line-height: 1.7;
         }
 
+        /* Classes utilitaires pour les animations de fondu au scroll */
         .fade-in-init {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
             transition: opacity 1.2s var(--ease-expo), transform 1.2s var(--ease-expo);
         }
 
@@ -43,6 +44,7 @@
             transform: translateY(0);
         }
 
+        /* En-tête / Barre de navigation */
         header {
             display: flex;
             justify-content: space-between;
@@ -97,10 +99,16 @@
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
+            transition: color 0.3s;
         }
 
+        .nav-menu a:hover {
+            color: var(--txt-white);
+        }
+
+        /* Section Hero */
         .hero-section {
-            min-height: 75vh;
+            min-height: 80vh;
             padding: 140px 6% 80px 6%;
             background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.02) 0%, rgba(5,7,10,1) 70%),
                         url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2000') no-repeat center center/cover;
@@ -112,23 +120,28 @@
         }
 
         .hero-section h1 {
-            font-size: clamp(2.2rem, 6vw, 4.2rem);
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
             font-weight: 300;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-            max-width: 900px;
+            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+            max-width: 1000px;
+            line-height: 1.15;
         }
 
         .hero-section h1 strong { font-weight: 700; }
 
         .hero-section p {
             color: var(--txt-gray);
-            max-width: 650px;
-            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 700px;
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            font-weight: 300;
         }
 
+        /* Section Spécialités avec fond flouté de clinique dentaire */
         .specialties-section {
-            background: linear-gradient(180deg, rgba(5,7,10,0.95) 0%, rgba(5,7,10,0.9) 100%);
+            background: linear-gradient(180deg, rgba(5,7,10,0.95) 0%, rgba(5,7,10,0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2000') no-repeat center center/cover;
+            background-attachment: fixed;
             padding: 120px 6%;
         }
 
@@ -141,34 +154,35 @@
             font-size: clamp(1.8rem, 4vw, 2.8rem);
             font-weight: 400;
             letter-spacing: -0.5px;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
         .section-subtitle {
             color: var(--txt-gray);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .matrix-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 32px;
         }
 
+        /* Cartes très hautes (Tall Cards) */
         .tall-glass-card {
             background: var(--bg-card);
             border: 1px solid var(--brd-micro);
             border-radius: 32px;
-            padding: 60px 40px;
+            padding: 65px 45px;
             backdrop-filter: var(--blur-luxe);
             -webkit-backdrop-filter: var(--blur-luxe);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
             transition: transform 0.4s var(--ease-expo), border-color 0.4s;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 26px;
             min-height: 580px; 
         }
 
@@ -178,8 +192,11 @@
         }
 
         .card-icon-frame {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .card-icon-frame svg {
@@ -187,13 +204,23 @@
             height: 100%;
             stroke: var(--txt-white);
             fill: none;
-            stroke-width: 1.5;
+            stroke-width: 1.2;
         }
 
-        .tall-glass-card h3 { font-size: 1.6rem; font-weight: 500; }
-        .tall-glass-card p { color: var(--txt-gray); font-size: 1rem; line-height: 1.7; }
+        .tall-glass-card h3 {
+            font-size: 1.65rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+        }
 
-        /* GALERIE AVANT/APRÈS : Strictement la bouche et les dents */
+        .tall-glass-card p {
+            color: var(--txt-gray);
+            font-size: 1.02rem;
+            line-height: 1.75;
+            font-weight: 300;
+        }
+
+        /* Section Galerie de Comparaison (Lèvres et Dents uniquement) */
         .gallery-section {
             padding: 100px 6%;
             max-width: 1400px;
@@ -203,25 +230,24 @@
         .stencil-container-canvas {
             position: relative;
             width: 100%;
-            height: 550px;
+            height: 520px;
             overflow: hidden;
             border-radius: 24px;
-            margin: 20px 0 60px 0;
+            margin: 24px 0 60px 0;
             border: 1px solid var(--brd-micro);
-            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
-            background-color: #05070a;
+            box-shadow: 0 40px 90px rgba(0,0,0,0.6);
+            user-select: none;
+            -webkit-user-select: none;
         }
 
-        .stencil-layer-before,
-        .stencil-mask-slider-window .stencil-layer-after {
+        .img-layer-base {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
+            object-fit: cover;
+            pointer-events: none;
         }
 
         .stencil-mask-slider-window {
@@ -232,22 +258,17 @@
             height: 100%;
             overflow: hidden;
             border-right: 3px solid #ffffff;
+            z-index: 2;
+            pointer-events: none;
         }
 
-        /* CARD 1: Uneven teeth vs organized teeth (Mouth close-up only) */
-        .case-ortho .stencil-layer-before { 
-            background-image: url('https://images.unsplash.com/photo-1516211697506-8360bd7934b0?q=80&w=1200'); 
-        }
-        .case-ortho .stencil-mask-slider-window .stencil-layer-after { 
-            background-image: url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1200'); 
-        }
-        
-        /* CARD 2: Discolored teeth vs white veneers (Mouth close-up only) */
-        .case-decay .stencil-layer-before { 
-            background-image: url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=1200'); 
-        }
-        .case-decay .stencil-mask-slider-window .stencil-layer-after { 
-            background-image: url('https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=1200'); 
+        .stencil-mask-slider-window .img-layer-reveal {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
         }
 
         .slider-divider-control {
@@ -264,36 +285,51 @@
         }
 
         .slider-handle-pill {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             background: #ffffff;
-            color: #000000;
+            color: #05070a;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            box-shadow: 0 0 20px rgba(0,0,0,0.6);
-            border: 3px solid var(--bg-deep);
+            box-shadow: 0 0 25px rgba(0,0,0,0.7);
+            font-size: 1.1rem;
+            border: 3px solid #05070a;
         }
 
         .label-pill {
             position: absolute;
-            bottom: 20px;
+            bottom: 24px;
             background: rgba(5, 7, 10, 0.85);
-            padding: 8px 16px;
-            font-size: 0.75rem;
+            padding: 10px 18px;
+            font-size: 0.78rem;
             border-radius: 8px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
             border: 1px solid var(--brd-micro);
             z-index: 5;
         }
-        .lbl-before { right: 20px; }
-        .lbl-after { left: 20px; }
+        .lbl-before { right: 24px; }
+        .lbl-after { left: 24px; }
 
+        .case-details h4 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .case-details p {
+            color: var(--txt-gray);
+            font-size: 0.98rem;
+            font-weight: 300;
+        }
+
+        /* Section Statistiques / Nombres avec Animation */
         .metrics-section {
-            padding: 80px 6%;
+            padding: 90px 6%;
             background: rgba(255, 255, 255, 0.01);
             border-top: 1px solid var(--brd-micro);
             border-bottom: 1px solid var(--brd-micro);
@@ -303,134 +339,226 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 40px;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .metric-item-container h5 { font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 700; margin-bottom: 5px; }
-        .metric-item-container p { font-size: 0.85rem; color: var(--txt-gray); text-transform: uppercase; letter-spacing: 2px; }
+        .metric-item-container h5 {
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -1px;
+        }
 
-        .pricing-section { padding: 100px 6%; max-width: 1200px; margin: 0 auto; }
-        .pricing-deck-card { background: var(--bg-card); border: 1px solid var(--brd-micro); border-radius: 32px; padding: 50px 40px; backdrop-filter: var(--blur-luxe); -webkit-backdrop-filter: var(--blur-luxe); }
-        .price-item-row { display: flex; justify-content: space-between; align-items: center; padding: 24px 10px; border-bottom: 1px solid var(--brd-micro); }
+        .metric-item-container p {
+            font-size: 0.85rem;
+            color: var(--txt-gray);
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+        }
+
+        /* Section Tarification */
+        .pricing-section {
+            padding: 110px 6%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .pricing-deck-card {
+            background: var(--bg-card);
+            border: 1px solid var(--brd-micro);
+            border-radius: 32px;
+            padding: 60px 45px;
+            backdrop-filter: var(--blur-luxe);
+            -webkit-backdrop-filter: var(--blur-luxe);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+
+        .price-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 26px 15px;
+            border-bottom: 1px solid var(--brd-micro);
+            transition: background 0.3s, transform 0.3s var(--ease-expo);
+            border-radius: 12px;
+        }
+
+        .price-item-row:hover {
+            background: rgba(255, 255, 255, 0.02);
+            transform: translateX(6px);
+        }
+
         .price-item-row:last-of-type { border-bottom: none; }
-        .price-info h4 { font-size: 1.2rem; font-weight: 500; margin-bottom: 4px; }
-        .price-info p { font-size: 0.9rem; color: var(--txt-gray); }
-        .price-value { font-weight: 700; font-size: 1.2rem; }
+
+        .price-info h4 { font-size: 1.25rem; font-weight: 500; margin-bottom: 4px; }
+        .price-info p { font-size: 0.92rem; color: var(--txt-gray); font-weight: 300; }
+        .price-value { font-weight: 700; font-size: 1.25rem; }
+
+        /* Bande de défilement d'images continu en bas */
+        .passing-ribbon-wrapper {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            overflow: hidden;
+            padding: 45px 0;
+            border-top: 1px solid var(--brd-micro);
+        }
+
+        .passing-ribbon-track {
+            display: flex;
+            width: calc(330px * 12);
+            animation: continuousMarqueeLoop 28s linear infinite;
+        }
+
+        .passing-ribbon-track:hover { animation-play-state: paused; }
+
+        .passing-ribbon-node {
+            width: 310px;
+            height: 210px;
+            margin: 0 10px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid var(--brd-micro);
+            transition: transform 0.4s var(--ease-expo), border-color 0.4s;
+        }
+
+        .passing-ribbon-node:hover {
+            transform: scale(1.03);
+            border-color: #ffffff;
+        }
+
+        @keyframes continuousMarqueeLoop {
+            0% { transform: translate3d(0,0,0); }
+            100% { transform: translate3d(calc(-330px * 6),0,0); }
+        }
 
         footer {
-            padding: 40px 6%;
-            text-align: center;
+            padding: 50px 6%;
             border-top: 1px solid var(--brd-micro);
+            text-align: center;
             color: var(--txt-gray);
             font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         @media (max-width: 768px) {
-            .specialties-section, .pricing-deck-card, .tall-glass-card { padding: 35px 20px; }
-            .stencil-container-canvas { height: 350px; }
+            .specialties-section, .pricing-deck-card, .tall-glass-card { padding: 40px 20px; }
+            .stencil-container-canvas { height: 360px; }
             .tall-glass-card { min-height: auto; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation -->
     <header class="fade-in-init">
         <div class="logo-group">
-            <div class="logo-box">V</div>
-            <div class="logo-title">VeneerArt</div>
+            <div class="logo-box">A</div>
+            <div class="logo-title">AuraDent</div>
         </div>
         <ul class="nav-menu">
-            <li><a href="#traitements">Traitements</a></li>
-            <li><a href="#galerie">Résultats</a></li>
-            <li><a href="#performances">Chiffres</a></li>
-            <li><a href="#tarifs">Honoraires</a></li>
+            <li><a href="#expertises">Expertises</a></li>
+            <li><a href="#analyses">Analyses Cas</a></li>
+            <li><a href="#chiffres">Performances</a></li>
+            <li><a href="#grille">Honoraires</a></li>
         </ul>
-        <div style="width:10px;"></div>
+        <div style="width:15px;"></div>
     </header>
 
+    <!-- Accueil Intro -->
     <section class="hero-section fade-in-init">
         <h1>Conception Digitale & <strong>Haute Architecture Du Sourire</strong></h1>
         <p>Une restructuration esthétique sur-mesure combinant l'analyse biomimétique avancée et des technologies de facettes exclusives.</p>
     </section>
 
-    <section class="specialties-section" id="traitements">
+    <!-- Zone Spécialités (Tall Cards, Icônes SVG, Fond flouté clinique) -->
+    <section class="specialties-section" id="expertises">
         <div class="section-header-block fade-in-init">
             <h2 class="section-title">Ingénierie Esthétique</h2>
-            <div class="section-subtitle">Protocoles Exclusifs Haute Performance</div>
+            <div class="section-subtitle">Protocoles Exclusivement Dédiés À La Perfection Haute Résolution</div>
         </div>
         
         <div class="matrix-grid">
+            <!-- Carte 1 -->
             <div class="tall-glass-card fade-in-init">
                 <div class="card-icon-frame">
                     <svg viewBox="0 0 24 24"><path d="M4 6l2 11h12l2-11-4 3-4-6-4 6-4-3z" stroke-linejoin="round" stroke-linecap="round"/></svg>
                 </div>
                 <h3>Facettes Micro-Céramiques</h3>
-                <p>Création de facettes ultra-fines conçues numériquement pour restructurer la morphologie et corriger l'alignement global. Une solution pérenne qui s'intègre naturellement avec les tissus gingivaux sous-jacents.</p>
+                <p>Création de revêtements structurels fins appliqués au micron près pour corriger la teinte, l'alignement et les anomalies morphologiques de l'émail. Une intégration biologique absolue assurant la pérennité et un éclat d'une clarté translucide exceptionnelle.</p>
             </div>
 
+            <!-- Carte 2 -->
             <div class="tall-glass-card fade-in-init">
                 <div class="card-icon-frame">
                     <svg viewBox="0 0 24 24"><path d="M12 2C9.5 2 8 3.5 8 6c0 1.5.5 2.5 1.5 3.5L10 10.5V14h4v-3.5l.5-1C15.5 8.5 16 1.5 16 6c0-2.5-1.5-4-4-4z" stroke-linecap="round"/></svg>
                 </div>
-                <h3>Réalignement Invisible</h3>
-                <p>Système de corrections par gouttières transparentes dynamiques appliquées pour repositionner les arcades sans impacter votre vie sociale. Une précision millimétrique gérée par planification 3D.</p>
+                <h3>Alignement Tridimensionnel</h3>
+                <p>Système de correction occlusale invisible par le biais d'aligneurs thermoformés transparents et amovibles. Permet une transition douce vers un positionnement idéal des structures dentaires tout en préservant le confort et la discrétion au quotidien.</p>
             </div>
 
+            <!-- Carte 3 -->
             <div class="tall-glass-card fade-in-init">
                 <div class="card-icon-frame">
                     <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg>
                 </div>
                 <h3>Blanchiment Moléculaire</h3>
-                <p>Activation photonique avancée permettant de cibler les pigments incrustés au cœur de l'émail. Restaure une luminosité naturelle éclatante tout en préservant parfaitement la sensibilité dentaire.</p>
+                <p>Formules d'éclaircissement hautement concentrées photo-activées par des technologies laser de pointe. Élimine les colorations profondes de la matrice dentaire pour restaurer une luminosité éclatante et saine sans aucune altération de la sensibilité.</p>
             </div>
         </div>
     </section>
 
-    <!-- Zone de Comparaison — Exclusivement des bouches réelles -->
-    <section class="gallery-section" id="galerie">
+    <!-- Zone Avant/Après (Lèvres et Dents Uniquement avec vos fichiers) -->
+    <section class="gallery-section" id="analyses">
         <div class="section-header-block fade-in-init">
             <h2 class="section-title">Analyses Macro-Visuelles</h2>
-            <div class="section-subtitle">Résultats Réels Avant / Après (Focus Dentaire Exclusif)</div>
+            <div class="section-subtitle">Cas Cliniques Authentiques (Focus Lèvres Et Dents Exclusif)</div>
         </div>
 
-        <!-- Cas 1 : Dents irrégulières -> Dents Organisées et Alignées -->
+        <!-- Premier Bloc : 3209.jpg (Avant : Désordonné) vs 3208.jpg (Après : Aligné & Blanc) -->
         <div class="fade-in-init">
-            <div class="stencil-container-canvas case-ortho">
-                <div class="stencil-layer-before"></div>
+            <div class="stencil-container-canvas">
+                <img src="3209.jpg" class="img-layer-base" alt="Dents non organisées">
                 <div class="stencil-mask-slider-window">
-                    <div class="stencil-layer-after"></div>
+                    <img src="3208.jpg" class="img-layer-reveal" alt="Dents blanches groupées">
                 </div>
-                <div class="label-pill lbl-before">Dents Irrégulières</div>
-                <div class="label-pill lbl-after">Dents Organisées & Alignées</div>
+                <div class="label-pill lbl-before">Structure Non Organisée</div>
+                <div class="label-pill lbl-after">Dents Groupées Alignées Blanches</div>
                 <div class="slider-divider-control"><div class="slider-handle-pill">⬌</div></div>
             </div>
-            <div style="margin-top:20px;">
-                <h4 style="font-size:1.3rem; font-weight:500;">Cas Clinique I — Alignement & Unification</h4>
-                <p style="color:var(--txt-gray); font-size:0.95rem;">Correction des dysharmonies de positionnement et réorganisation complète des axes du sourire.</p>
+            <div class="case-details">
+                <h4>Cas Clinique I — Harmonisation Axiale Structurale</h4>
+                <p>Restructuration globale d'une dysharmonie spatiale combinant réalignement complet et optimisation de la translucidité.</p>
             </div>
         </div>
 
-        <!-- Cas 2 : Teinte altérée -> Dents Blanches et Parfaites -->
-        <div class="fade-in-init" style="margin-top: 50px;">
-            <div class="stencil-container-canvas case-decay">
-                <div class="stencil-layer-before"></div>
+        <!-- Deuxième Bloc : 3203.jpg (Avant : Abîmé) vs 3205.jpg (Après : Propre, Blanc & Brillant) -->
+        <div class="fade-in-init" style="margin-top: 60px;">
+            <div class="stencil-container-canvas">
+                <img src="3203.jpg" class="img-layer-base" alt="Dents abîmées">
                 <div class="stencil-mask-slider-window">
-                    <div class="stencil-layer-after"></div>
+                    <img src="3205.jpg" class="img-layer-reveal" alt="Dents blanches brillantes">
                 </div>
-                <div class="label-pill lbl-before">Teinte Terne / Altérée</div>
-                <div class="label-pill lbl-after">Sourire Blanc Éclatant</div>
+                <div class="label-pill lbl-before">Éléments Altérés / Jaunis</div>
+                <div class="label-pill lbl-after">Dents Propres Blanches Éclatantes</div>
                 <div class="slider-divider-control"><div class="slider-handle-pill">⬌</div></div>
             </div>
-            <div style="margin-top:20px;">
-                <h4 style="font-size:1.3rem; font-weight:500;">Cas Clinique II — Restauration Lumineuse Élite</h4>
-                <p style="color:var(--txt-gray); font-size:0.95rem;">Restauration complète de la translucidité naturelle et application de facettes en céramique pure.</p>
+            <div class="case-details">
+                <h4>Cas Clinique II — Restauration Émail Et Revêtement Élite</h4>
+                <p>Élimination des défauts de surface suivis d'une pose de facettes hautement polies pour un fini sain, brillant et impeccable.</p>
             </div>
         </div>
     </section>
 
-    <section class="metrics-section" id="performances">
+    <!-- Zone des Nombres (Animations Progressives Interactives) -->
+    <section class="metrics-section" id="chiffres">
         <div class="metrics-grid-layout">
             <div class="metric-item-container fade-in-init">
                 <h5 class="counter-element" data-target="1000">0</h5>
@@ -441,17 +569,18 @@
                 <p>Avis 5 Étoiles</p>
             </div>
             <div class="metric-item-container fade-in-init">
-                <h5 class="counter-element" data-target="98">0</h5>
-                <p>% Taux de Réussite</p>
+                <h5 class="counter-element" data-target="99">0</h5>
+                <p>% Satisfaction Client</p>
             </div>
         </div>
     </section>
 
-    <section class="pricing-section" id="tarifs">
+    <!-- Zone Honoraires -->
+    <section class="pricing-section" id="grille">
         <div class="pricing-deck-card fade-in-init">
-            <div class="section-header-block" style="margin-bottom: 40px;">
-                <h2 class="section-title">Grille Des Honoraires</h2>
-                <div class="section-subtitle">Investissement Esthétique Maîtrisé</div>
+            <div class="section-header-block" style="margin-bottom: 45px;">
+                <h2 class="section-title">Honoraires Des Soins</h2>
+                <div class="section-subtitle">Rapports De Tarification Clairs Et Transparents</div>
             </div>
             
             <div class="price-item-row">
@@ -472,13 +601,34 @@
         </div>
     </section>
 
+    <!-- Bandeau Marquee Continu d'images cliniques réelles au bas -->
+    <section class="passing-ribbon-wrapper fade-in-init">
+        <div class="passing-ribbon-track">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Clinique">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Cabinet">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Équipement">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Laboratoire">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=500" alt="Technologie">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Soin">
+            <!-- Duplication miroir pour le raccord parfait du défilement infini -->
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=500" alt="Clinique">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=500" alt="Cabinet">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1579684389782-64d84b5e9053?q=80&w=500" alt="Équipement">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1512223792601-592a9809eed4?q=80&w=500" alt="Laboratoire">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=500" alt="Technologie">
+            <img class="passing-ribbon-node" src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?q=80&w=500" alt="Soin">
+        </div>
+    </section>
+
+    <!-- Pied de page -->
     <footer class="fade-in-init">
-        <p>&copy; 2026 VeneerArt Studio — Tous droits réservés.</p>
+        <p>&copy; 2026 AuraDent International — Studio d'Architecture Esthétique Dentaire. Tous droits réservés.</p>
     </footer>
 
     <script>
+        // Moteur d'apparition au défilement (Scroll Intersections)
         const initFadeInObservers = () => {
-            const items = document.querySelectorAll('.fade-in-init');
+            const targets = document.querySelectorAll('.fade-in-init');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -487,28 +637,31 @@
                     }
                 });
             }, { threshold: 0.1 });
-            items.forEach(el => observer.observe(el));
+            targets.forEach(t => observer.observe(t));
         };
 
+        // Compteurs d'animation fluides pour les statistiques (0 à 1000 & 0 à 25)
         const initNumericalCounters = () => {
             const counters = document.querySelectorAll('.counter-element');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const target = parseInt(entry.target.getAttribute('data-target'), 10);
-                        let start = 0;
-                        const duration = 1500;
-                        const stepTime = Math.abs(Math.floor(duration / target));
+                        const targetValue = parseInt(entry.target.getAttribute('data-target'), 10);
+                        let startValue = 0;
+                        const duration = 1600; // Durée totale en millisecondes
+                        const frameTime = Math.max(Math.floor(duration / targetValue), 12);
                         
-                        const timer = setInterval(() => {
-                            start += Math.ceil(target / 50);
-                            if (start >= target) {
-                                entry.target.innerText = target;
-                                clearInterval(timer);
+                        const stepIncrement = Math.ceil(targetValue / (duration / frameTime));
+
+                        const interval = setInterval(() => {
+                            startValue += stepIncrement;
+                            if (startValue >= targetValue) {
+                                entry.target.innerText = targetValue;
+                                clearInterval(interval);
                             } else {
-                                entry.target.innerText = start;
+                                entry.target.innerText = startValue;
                             }
-                        }, stepTime > 10 ? stepTime : 10);
+                        }, frameTime);
                         
                         observer.unobserve(entry.target);
                     }
@@ -517,37 +670,43 @@
             counters.forEach(c => observer.observe(c));
         };
 
+        // Gestion précise des glissières interactives de comparaison Avant/Après
         const initBeforeAfterSliders = () => {
             document.querySelectorAll('.stencil-container-canvas').forEach(container => {
-                const mask = container.querySelector('.stencil-mask-slider-window');
-                const imgAfter = container.querySelector('.stencil-layer-after');
-                const handler = container.querySelector('.slider-divider-control');
+                const maskWindow = container.querySelector('.stencil-mask-slider-window');
+                const innerRevealImg = container.querySelector('.img-layer-reveal');
+                const dragControl = container.querySelector('.slider-divider-control');
 
-                const resizeAfterImageWidth = () => {
-                    imgAfter.style.width = `${container.offsetWidth}px`;
+                const syncImageWidth = () => {
+                    innerRevealImg.style.width = `${container.offsetWidth}px`;
                 };
 
-                const updateSliderPosition = (clientX) => {
-                    const rect = container.getBoundingClientRect();
-                    let offset = clientX - rect.left;
-                    if (offset < 0) offset = 0;
-                    if (offset > rect.width) offset = rect.width;
+                const updateSplitPosition = (clientX) => {
+                    const boundingBox = container.getBoundingClientRect();
+                    let relativeX = clientX - boundingBox.left;
                     
-                    const pct = (offset / rect.width) * 100;
-                    mask.style.width = `${pct}%`;
-                    handler.style.left = `${pct}%`;
+                    if (relativeX < 0) relativeX = 0;
+                    if (relativeX > boundingBox.width) relativeX = boundingBox.width;
+                    
+                    const ratioPercentage = (relativeX / boundingBox.width) * 100;
+                    maskWindow.style.width = `${ratioPercentage}%`;
+                    dragControl.style.left = `${ratioPercentage}%`;
                 };
 
-                window.addEventListener('resize', resizeAfterImageWidth);
-                resizeAfterImageWidth();
+                window.addEventListener('resize', syncImageWidth);
+                syncImageWidth();
 
-                container.addEventListener('mousemove', (e) => { if (e.buttons === 1) updateSliderPosition(e.clientX); });
-                container.addEventListener('mousedown', (e) => updateSliderPosition(e.clientX));
-                container.addEventListener('touchmove', (e) => { updateSliderPosition(e.touches[0].clientX); }, { passive: true });
-                container.addEventListener('touchstart', (e) => { updateSliderPosition(e.touches[0].clientX); }, { passive: true });
+                // Événements Bureau (Souris)
+                container.addEventListener('mousemove', (e) => { if (e.buttons === 1) updateSplitPosition(e.clientX); });
+                container.addEventListener('mousedown', (e) => updateSplitPosition(e.clientX));
+
+                // Événements Mobiles (Touch)
+                container.addEventListener('touchmove', (e) => { updateSplitPosition(e.touches[0].clientX); }, { passive: true });
+                container.addEventListener('touchstart', (e) => { updateSplitPosition(e.touches[0].clientX); }, { passive: true });
             });
         };
 
+        // Chargement global initialisé dès le cycle du DOM
         window.addEventListener('DOMContentLoaded', () => {
             initFadeInObservers();
             initNumericalCounters();
